@@ -1,0 +1,14 @@
+module load r
+
+##################
+### SIMULATION ###
+##################
+
+### TEST Code
+Rscript submit_simulation.R "Ds <- c(10)" "ns <- 50" "ranges <- 0.5" "smooths <- 1" "alphas <- 2" "betas <- 1" "repar <- FALSE" "hh <- 0.5" "fixed <- c(TRUE,FALSE,FALSE,TRUE)" "Replics <- c(1:32)" "N <- 1000" "sim <- 0" "All <- TRUE" "start.from.previous.par <- FALSE"
+
+### RUN full simulation study
+Rscript submit_simulation.R "Ds <- c(10,15,20)" "ns <- 50" "ranges <- c(0.5,1)" "smooths <- 1" "alphas <- c(1,2,5)" "betas <- c(0,0.5,1)" "repar <- FALSE" "hh <- 0.5" "fixed <- c(TRUE,FALSE,FALSE,TRUE)" "Replics <- c(1:1024)" "N <- 10000" "sim <- 1" "All <- FALSE" "start.from.previous.par <- FALSE"
+
+
+

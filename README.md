@@ -1,24 +1,33 @@
-# RW Mixture Model: Simulation + MPI Sampler (with C++ numerical integration)
+# Handbook of Statistics of Extremes: Subasymptotic models for spatial extremes 
 
-This repository contains code to **simulate** and **fit** an RW (Random-Weight / scale-mixture) model for spatio-temporal extremes (or heavy-tailed processes), where evaluation of the **RW mixture CDF/PDF** requires **numerical integration**.
+
+This repository mainly contains code to **simulate** and **fit** a HW (Huser-Wadsworth randome scale-mixture [^1]) model for spatio-temporal extremes.
 
 Key design choices:
-- **MPI parallelism over time replicates** (each MPI rank handles one time index).
-- A **C++ shared library** (`RW_inte_cpp.so`) provides fast numerical integration routines, called from Python via `ctypes`.
+- The fitting of the **max-stable model** is done through calling the `fitmaxstab()` function in the R package ` SpatialExtremes`.
+- The fitting of the **max-infinite divisible mdoel** uses the implementation provided by Huser et al. in their paper [^2]. 
 - Python orchestrates simulation and MCMC sampling.
+- To facilitate computation time, we employ a **C++ shared library** (`RW_inte_cpp.so`) to provide fast numerical integration routines, called from Python via `ctypes`. Further, we utilize **MPI parallelism over time replicates** (each MPI rank handles one time index).
 
 ---
 
-## Repository layout (recommended)
+## Repository layout 
 
 ```
 .
-├── sampler.py                 # MPI sampler (special-case: constant parameters)
+├── sampler.py                  # MPI sampler (special-case: constant parameters)
 ├── simulate_data.py            # Simulation script for RW mixture data
 ├── RW_inte.py                  # Python wrapper for RW CDF/PDF (loads .so via ctypes)
 ├── RW_inte_cpp.cpp             # C++ implementation of numerical integration
 ├── utilities.py                # helper functions (kernels, covariances, transforms, etc.)
 ├── exe.sh                      # example Slurm script (mpirun + sampler.py)
+├── data/                       # PNW Temperature data sets
+├── maxID_Code_Raphael/                    # max-ID model impelemted by Huser et al. (2021)
+    ├── C_Code/                       
+    ├── Data/
+    ├── Figures/
+    ├── Jobs/
+    └── R_Code/
 └── README.md
 ```
 
@@ -215,5 +224,7 @@ If you want the fully spatially varying version later:
 
 ---
 
-## Citation / attribution
-If you use this code in academic work, please cite (add your preferred citation here).
+---
+## References
+[^1]: Huser, R., & Wadsworth, J. L. (2019). Modeling spatial processes with unknown extremal dependence class. Journal of the American statistical association, 114(525), 434-444.
+[^2]: Huser, R., Opitz, T., & Thibaud, E. (2021). Max‐infinitely divisible models and inference for spatial extremes. Scandinavian Journal of Statistics, 48(1), 321-348.

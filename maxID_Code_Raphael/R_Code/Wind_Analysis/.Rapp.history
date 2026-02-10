@@ -1,0 +1,1113 @@
+load('~/Documents/Work/05_AssistantProfessor-KAUST/Research/random_scale_model/R/Random_Scale_Model/Outputs/Wind_Analysis/CrossValidation/fit_RW_holdout7.RData')
+load('~/Documents/Work/05_AssistantProfessor-KAUST/Research/random_scale_model/R/Random_Scale_Model/Outputs/Wind_Analysis/CrossValidation/fit_RW_beta0_holdout7.RData')
+fit.RW.cv$nllik
+fit.RW.beta0.cv$nllik
+load('~/Documents/Work/05_AssistantProfessor-KAUST/Research/random_scale_model/R/Random_Scale_Model/Outputs/Wind_Analysis/CrossValidation/fit_RW_holdout8.RData')
+load('~/Documents/Work/05_AssistantProfessor-KAUST/Research/random_scale_model/R/Random_Scale_Model/Outputs/Wind_Analysis/CrossValidation/fit_RW_beta0_holdout8.RData')
+fit.RW.cv$nllik
+fit.RW.beta0.cv$nllik
+load('~/Documents/Work/05_AssistantProfessor-KAUST/Research/random_scale_model/R/Random_Scale_Model/Outputs/Wind_Analysis/CrossValidation/fit_RW_holdout9.RData')
+load('~/Documents/Work/05_AssistantProfessor-KAUST/Research/random_scale_model/R/Random_Scale_Model/Outputs/Wind_Analysis/CrossValidation/fit_RW_beta0_holdout9.RData')
+fit.RW.cv$nllik
+fit.RW.beta0.cv$nllik
+load('~/Documents/Work/05_AssistantProfessor-KAUST/Research/random_scale_model/R/Random_Scale_Model/Outputs/Wind_Analysis/CrossValidation/fit_RW_holdout10.RData')
+load('~/Documents/Work/05_AssistantProfessor-KAUST/Research/random_scale_model/R/Random_Scale_Model/Outputs/Wind_Analysis/CrossValidation/fit_RW_beta0_holdout10.RData')
+fit.RW.cv$nllik
+fit.RW.beta0.cv$nllik
+load('~/Documents/Work/05_AssistantProfessor-KAUST/Research/random_scale_model/R/Random_Scale_Model/Outputs/Wind_Analysis/CrossValidation/fit_RW_holdout11.RData')
+load('~/Documents/Work/05_AssistantProfessor-KAUST/Research/random_scale_model/R/Random_Scale_Model/Outputs/Wind_Analysis/CrossValidation/fit_RW_beta0_holdout11.RData')
+fit.RW.cv$nllik
+fit.RW.beta0.cv$nllik
+load('~/Documents/Work/05_AssistantProfessor-KAUST/Research/random_scale_model/R/Random_Scale_Model/Outputs/Wind_Analysis/CrossValidation/fit_RW_holdout12.RData')
+load('~/Documents/Work/05_AssistantProfessor-KAUST/Research/random_scale_model/R/Random_Scale_Model/Outputs/Wind_Analysis/CrossValidation/fit_RW_beta0_holdout12.RData')
+fit.RW.cv$nllik
+fit.RW.beta0.cv$nllik
+load('~/Documents/Work/05_AssistantProfessor-KAUST/Research/random_scale_model/R/Random_Scale_Model/Outputs/Wind_Analysis/CrossValidation/fit_RW_holdout1.RData')
+load('~/Documents/Work/05_AssistantProfessor-KAUST/Research/random_scale_model/R/Random_Scale_Model/Outputs/Wind_Analysis/CrossValidation/fit_RW_beta0_holdout1.RData')
+fit.RW.cv$conv
+fit.RW.beta0.cv$conv
+load('~/Documents/Work/05_AssistantProfessor-KAUST/Research/random_scale_model/R/Random_Scale_Model/Outputs/Wind_Analysis/CrossValidation/fit_RW_holdout2.RData')
+load('~/Documents/Work/05_AssistantProfessor-KAUST/Research/random_scale_model/R/Random_Scale_Model/Outputs/Wind_Analysis/CrossValidation/fit_RW_beta0_holdout2.RData')
+fit.RW.cv$conv
+fit.RW.beta0.cv$conv
+load('~/Documents/Work/05_AssistantProfessor-KAUST/Research/random_scale_model/R/Random_Scale_Model/Outputs/Wind_Analysis/CrossValidation/fit_RW_holdout3.RData')
+load('~/Documents/Work/05_AssistantProfessor-KAUST/Research/random_scale_model/R/Random_Scale_Model/Outputs/Wind_Analysis/CrossValidation/fit_RW_beta0_holdout3.RData')
+fit.RW.cv$conv
+fit.RW.beta0.cv$conv
+load('~/Documents/Work/05_AssistantProfessor-KAUST/Research/random_scale_model/R/Random_Scale_Model/Outputs/Wind_Analysis/CrossValidation/fit_RW_holdout4.RData')
+load('~/Documents/Work/05_AssistantProfessor-KAUST/Research/random_scale_model/R/Random_Scale_Model/Outputs/Wind_Analysis/CrossValidation/fit_RW_beta0_holdout4.RData')
+fit.RW.cv$conv
+fit.RW.beta0.cv$conv
+load('~/Documents/Work/05_AssistantProfessor-KAUST/Research/random_scale_model/R/Random_Scale_Model/Outputs/Wind_Analysis/CrossValidation/fit_RW_holdout5.RData')
+load('~/Documents/Work/05_AssistantProfessor-KAUST/Research/random_scale_model/R/Random_Scale_Model/Outputs/Wind_Analysis/CrossValidation/fit_RW_beta0_holdout5.RData')
+fit.RW.cv$conv
+fit.RW.beta0.cv$conv
+load('~/Documents/Work/05_AssistantProfessor-KAUST/Research/random_scale_model/R/Random_Scale_Model/Outputs/Wind_Analysis/CrossValidation/fit_RW_holdout6.RData')
+load('~/Documents/Work/05_AssistantProfessor-KAUST/Research/random_scale_model/R/Random_Scale_Model/Outputs/Wind_Analysis/CrossValidation/fit_RW_beta0_holdout6.RData')
+fit.RW.cv$conv
+fit.RW.beta0.cv$conv
+load('~/Documents/Work/05_AssistantProfessor-KAUST/Research/random_scale_model/R/Random_Scale_Model/Outputs/Wind_Analysis/CrossValidation/fit_RW_holdout7.RData')
+load('~/Documents/Work/05_AssistantProfessor-KAUST/Research/random_scale_model/R/Random_Scale_Model/Outputs/Wind_Analysis/CrossValidation/fit_RW_beta0_holdout7.RData')
+fit.RW.cv$conv
+fit.RW.beta0.cv$conv
+load('~/Documents/Work/05_AssistantProfessor-KAUST/Research/random_scale_model/R/Random_Scale_Model/Outputs/Wind_Analysis/CrossValidation/fit_RW_holdout8.RData')
+load('~/Documents/Work/05_AssistantProfessor-KAUST/Research/random_scale_model/R/Random_Scale_Model/Outputs/Wind_Analysis/CrossValidation/fit_RW_beta0_holdout8.RData')
+fit.RW.cv$conv
+fit.RW.beta0.cv$conv
+load('~/Documents/Work/05_AssistantProfessor-KAUST/Research/random_scale_model/R/Random_Scale_Model/Outputs/Wind_Analysis/CrossValidation/fit_RW_holdout9.RData')
+load('~/Documents/Work/05_AssistantProfessor-KAUST/Research/random_scale_model/R/Random_Scale_Model/Outputs/Wind_Analysis/CrossValidation/fit_RW_beta0_holdout9.RData')
+fit.RW.cv$conv
+fit.RW.beta0.cv$conv
+load('~/Documents/Work/05_AssistantProfessor-KAUST/Research/random_scale_model/R/Random_Scale_Model/Outputs/Wind_Analysis/CrossValidation/fit_RW_holdout10.RData')
+load('~/Documents/Work/05_AssistantProfessor-KAUST/Research/random_scale_model/R/Random_Scale_Model/Outputs/Wind_Analysis/CrossValidation/fit_RW_beta0_holdout10.RData')
+fit.RW.cv$conv
+fit.RW.beta0.cv$conv
+load('~/Documents/Work/05_AssistantProfessor-KAUST/Research/random_scale_model/R/Random_Scale_Model/Outputs/Wind_Analysis/CrossValidation/fit_RW_holdout11.RData')
+load('~/Documents/Work/05_AssistantProfessor-KAUST/Research/random_scale_model/R/Random_Scale_Model/Outputs/Wind_Analysis/CrossValidation/fit_RW_beta0_holdout10.RData')
+load('~/Documents/Work/05_AssistantProfessor-KAUST/Research/random_scale_model/R/Random_Scale_Model/Outputs/Wind_Analysis/CrossValidation/fit_RW_beta0_holdout11.RData')
+fit.RW.cv$conv
+fit.RW.beta0.cv$conv
+load('~/Documents/Work/05_AssistantProfessor-KAUST/Research/random_scale_model/R/Random_Scale_Model/Outputs/Wind_Analysis/CrossValidation/fit_RW_holdout12.RData')
+load('~/Documents/Work/05_AssistantProfessor-KAUST/Research/random_scale_model/R/Random_Scale_Model/Outputs/Wind_Analysis/CrossValidation/fit_RW_beta0_holdout12.RData')
+fit.RW.cv$conv
+fit.RW.beta0.cv$conv
+?optim
+load('~/Documents/Work/05_AssistantProfessor-KAUST/Research/random_scale_model/R/Random_Scale_Model/Outputs/Wind_Analysis/Fits/fit_RW.RData')
+ls()
+fit.RW
+load('~/Documents/Work/05_AssistantProfessor-KAUST/Research/random_scale_model/R/Random_Scale_Model/Outputs/Wind_Analysis/Fits/fit_RW_beta0.RData')
+fit.RW.beta0
+70*32*3
+1082000
+70*32*3*150
+70*32*3*150-1082000
+70*32*5*100
+70*32*5*300
+70*32*6*300
+70*32*6*200
+install.packages("INLA", repos="https://inla.r-inla-download.org/R/testing")
+library(INLA)
+seq(0.005,0.025,by=0.005)
+seq(0.98,0.995,by=0.005)
+seq(0.95,0.995,by=0.005)
+seq(0.97,0.996,by=0.002)
+seq(0.976,0.996,by=0.002)
+seq(0.98,0.996,by=0.002)
+seq(100,500,by=20)
+seq(100,500,by=40)
+seq(100,400,by=20)
+seq(100,400,by=50)
+seq(100,500,by=50)
+?file.exists
+######################################################
+######################################################
+### Load and Source Necessary Libraries and Files ####
+######################################################
+######################################################
+library(INLA)#
+INLA:::inla.dynload.workaround()#
+library(fields)
+BASE <- "~/Documents/Work/05_AssistantProfessor-KAUST/Research/INLA_for_Exceedances/clusterKAUST/INLA_Competition"
+DATA <- paste0(BASE, "Data/")#
+CODE <- paste0(BASE, "R_Code/")#
+OUT <- paste0(BASE, "R_Code/Outputs/")#
+#
+### import data, etc. #
+source(paste0(CODE, "import_data.R"))
+BASE <- "~/Documents/Work/05_AssistantProfessor-KAUST/Research/INLA_for_Exceedances/clusterKAUST/INLA_Competition/"
+DATA <- paste0(BASE, "Data/")#
+CODE <- paste0(BASE, "R_Code/")#
+OUT <- paste0(BASE, "R_Code/Outputs/")#
+#
+### import data, etc. #
+source(paste0(CODE, "import_data.R"))
+useRW2 <- TRUE
+usePositiveQuantile <- FALSE
+initialsd <- 0.025
+initialprec <- 1/initialsd^2
+fix2Initial <- TRUE
+qprob <- 0.5
+pthresh <- 0.99
+matrange <- 150
+cvsample.vec <- c(1:59)
+recompute <- FALSE
+nthreads <- 1
+### import data, etc. #
+source(paste0(CODE, "import_data.R"))
+cvsample <- 1
+cvsample.vec
+#############################
+	#############################
+	### ESTIMATION PROCEDURE ####
+	#############################
+	#############################
+#
+	### define cross-validation masks (TRUE, FALSE), where data flagged as TRUE will be set to NA for running INLA #####
+	### i.e., if we want to cross-validate the first sation, the first column of the cv mask must be TRUE#
+	### (NOTE: if cvmask has no TRUE entries, then we use all of the data for the fit)#
+	cvstations <- all.stats#
+	cvyears <- unique(years.mat)#
+	cvmask0 <- matrix(FALSE, ncol = ncol(prcp.mat), nrow = nrow(prcp.mat)) #default cv mask (nothing to cross-validate)#
+	cvmasks <- array(dim = c(sum(length(cvstations) + length(cvyears)), nrow(prcp.mat), ncol(prcp.mat)))#
+	for (i in 1:length(cvstations)) {#
+		### cross validation of all sites#
+		tmp <- cvmask0#
+		tmp[, i] <- TRUE#
+		cvmasks[i, , ] <- tmp#
+	}#
+	for (i in (length(cvstations) + 1):(dim(cvmasks)[1])) {#
+		### cross validation of all years#
+		tmp <- cvmask0#
+		tmp[years.mat == cvyears[i - length(cvstations)], ] <- TRUE#
+		cvmasks[i, , ] <- tmp#
+	}#
+#
+	### set to NA those data that we want to predict through cross-validation#
+	prcp.mat[cvmasks[cvsample, , ]] <- NA
+### we must be careful since prcp.mat contains the 35 observed sites, while we have to correctly add the 5 prediction sites (not really necessary for our CV study, but I don't want to change to code ...)#
+	dim(prcp.mat)#
+	dim(coord)#
+	colnames(prcp.mat)#
+	idx.obs <- as.numeric(colnames(prcp.mat))#
+	station.obs <- unique(stat.vec)#
+	station.id <- rep(station.obs[1:ncol(prcp.mat)], each = nrow(prcp.mat))#
+#
+	### NA value indicators in data in vector form#
+	is.na <- as.vector(is.na(prcp.mat))#
+#
+	### create various response vectors y for INLA #####
+	### if keepna, the NA values are kept #####
+#
+	### absence of precipitation y.absence, positive precipitation value y.prcp#
+	y.absence <- as.numeric(prcp.mat == 0)[!is.na]#
+	y.prcp <- as.numeric(prcp.mat)[prcp.mat > 0]#
+	y.prcp <- na.omit(y.prcp)#
+	is.prcp <- as.vector(prcp.mat > 0)#
+	is.prcp[is.na(is.prcp)] <- FALSE#
+#
+	### get day of year for the observations#
+	days <- all.dates$yday + 1#
+	days <- rep(days, ncol(prcp.mat))#
+#
+	### "weeks" for the observations#
+	### select "fractional" days to subdivide the year into weeks (for weekly effect) #
+	weeks <- inla.group(days, method = "cut", n = floor(365/7))#
+#
+	### derive the corresponding integer index of the weeks for use with inla#
+	idx.weeks <- match(weeks, sort(unique(weeks)))#
+	### years for the observations#
+	years <- rep(as.integer(all.dates$year), ncol(prcp.mat))#
+	### months for the observations#
+	months <- rep(as.integer(all.dates$mon + 1), ncol(prcp.mat))#
+	### Matérn model with prefixed range #####
+	### use PC prior for Matérn precision parameter to be estimated#
+	### choice of parameters???#
+	hyper.pc <- list(prec = list(prior = "pc.prec", param = c(2, 0.01)))#
+#
+	### write inla model formula #
+	form <- y ~ -1 + intercept + f(station, model = "generic0", Cmatrix = prec, hyper = hyper.pc, constr = TRUE) + f(week, model = ifelse(useRW2, "rw2", "rw1"), cyclic = TRUE, hyper = list(prec = list(initial = log(initialprec), fixed = fix2Initial)), constr = TRUE)#
+	data.inla <- data.frame(intercept = 1, y = y.prcp, week = weeks[is.prcp & !is.na], idx.week = idx.weeks[is.prcp & !is.na], station = station.id[is.prcp & !is.na])#
+#
+	### add all possible week-station combinations for prediction#
+	y.prcp.pred <- c(y.prcp, rep(NA, nrow(metric) * 52))#
+	week.pred <- c(weeks[is.prcp & !is.na], rep(sort(unique(weeks)), each = nrow(metric)))#
+	idx.week.pred <- c(idx.weeks[is.prcp & !is.na], rep(1:52, each = nrow(metric)))#
+	station.pred <- c(station.id[is.prcp & !is.na], rep(1:nrow(metric), 52))#
+	data.inla.pred <- data.frame(intercept = 1, y = y.prcp.pred, week = week.pred, idx.week = idx.week.pred, station = station.pred)
+file0 <- paste0(OUT, "fit.prcp.gamma", ".RW2", useRW2, ".fixsdweek", fix2Initial, ".matrange", matrange, ".sdweek", initialsd, ".cv", cvsample, ".Rdata")
+!file.exists(file0) | recompute
+fit <- inla(form, data = data.inla.pred, family = "gamma", control.family = list(hyper = list(theta = list(prior = "loggamma", param = c(2, 2), initial = log(1)))), control.predictor = list(compute = TRUE, link = 1), control.inla = list(strategy = "simplified.laplace", int.strategy = "ccd"), control.compute = list(return.marginals = T, mlik = T, cpo = T, waic = T, dic = T, hyperpar = T), verbose = T, num.threads = nthreads)
+INLA:::inla.dynload.workaround()
+fit <- inla(form, data = data.inla.pred, family = "gamma", control.family = list(hyper = list(theta = list(prior = "loggamma", param = c(2, 2), initial = log(1)))), control.predictor = list(compute = TRUE, link = 1), control.inla = list(strategy = "simplified.laplace", int.strategy = "ccd"), control.compute = list(return.marginals = T, mlik = T, cpo = T, waic = T, dic = T, hyperpar = T), verbose = T, num.threads = nthreads)
+length(cvstations)
+exists(cvstations)
+exists(x=cvstations)
+exists("cvstations")
+INLA:::inla.dynload.workaround()
+fit <- inla(form, data = data.inla.pred, family = "gamma", control.family = list(hyper = list(theta = list(prior = "loggamma", param = c(2, 2), initial = log(1)))), control.predictor = list(compute = TRUE, link = 1), control.inla = list(strategy = "simplified.laplace", int.strategy = "ccd"), control.compute = list(return.marginals = T, mlik = T, cpo = T, waic = T, dic = T, hyperpar = T), verbose = T, num.threads = nthreads)
+?tryCatch
+mean(pmax(0,rnorm(1000000)))
+1/sqrt(2*pi)
+### import data, etc. #
+source(paste0(CODE, "import_data.R"))#
+source(paste0(CODE, "util.R"))
+######################################################
+######################################################
+### Load and Source Necessary Libraries and Files ####
+######################################################
+######################################################
+BASE <- "~/Documents/Work/05_AssistantProfessor-KAUST/Research/INLA_for_Exceedances/clusterKAUST/INLA_Competition_Shaheen/"#
+OUT <- paste0(BASE, "Outputs/")#
+#########################
+#########################
+### INPUT PARAMETERS ####
+#########################
+#########################
+### Use random walk of order 2 (instead of order 1) for the weekly effect?#
+### You must use different folders OUT (below) for useRW2=TRUE/FALSE (otherwise you will get conflicting file names)#
+useRW2 <- TRUE#
+#
+### Define the threshold in terms of the pthresh-quantile of the positive precipitation part? (otherwise 0 + positive together)#
+### You must use different folders OUT (below) for usePositiveQuantile=TRUE/FALSE (otherwise you will get conflicting file names)#
+usePositiveQuantile <- TRUE#
+#
+### Initial value for the precision parameter of the random walk over weeks#
+initialsd <- 0.01#
+initialprec <- 1/initialsd^2#
+#
+### Fix this initial value? (i.e., do not estimate this hyperparameter)#
+### You must use different folders OUT (below) for fix2Initial=TRUE/FALSE (otherwise you will get conflicting file names)#
+fix2Initial <- TRUE#
+#
+### Quantile of the GP excess containing the linear predictor; since the quantile to predict is threshold-dependent, we cannot directly use it here (this is just a parameter)#
+### This does not really have any influence on the fit (but its value must be the same in the results_eva_cv.R file)#
+qprob <- 0.5#
+#
+### Probability corresponding to estimated high threshold#
+pthresh <- 0.92#
+#
+### Matern range#
+matrange <- 100#
+#
+### Target quantile (0.998 is the probability of interest for the competition, but we can choose a lower quantile for the cross-validation to avoid overfitting)#
+ptarget <- 0.998#
+#
+### Recompute/Refit objects/models, if they already exist?#
+recompute <- FALSE#
+#
+### Model number#
+ModNb <- 122
+#########################
+#########################
+### INPUT PARAMETERS ####
+#########################
+#########################
+### Use random walk of order 2 (instead of order 1) for the weekly effect?#
+### You must use different folders OUT (below) for useRW2=TRUE/FALSE (otherwise you will get conflicting file names)#
+useRW2 <- TRUE#
+#
+### Define the threshold in terms of the pthresh-quantile of the positive precipitation part? (otherwise 0 + positive together)#
+### You must use different folders OUT (below) for usePositiveQuantile=TRUE/FALSE (otherwise you will get conflicting file names)#
+usePositiveQuantile <- TRUE#
+#
+### Initial value for the precision parameter of the random walk over weeks#
+initialsd <- 0.02#
+initialprec <- 1/initialsd^2#
+#
+### Fix this initial value? (i.e., do not estimate this hyperparameter)#
+### You must use different folders OUT (below) for fix2Initial=TRUE/FALSE (otherwise you will get conflicting file names)#
+fix2Initial <- TRUE#
+#
+### Quantile of the GP excess containing the linear predictor; since the quantile to predict is threshold-dependent, we cannot directly use it here (this is just a parameter)#
+### This does not really have any influence on the fit (but its value must be the same in the results_eva_cv.R file)#
+qprob <- 0.5#
+#
+### Probability corresponding to estimated high threshold#
+pthresh <- 0.9#
+#
+### Matern range#
+matrange <- 200#
+#
+### Target quantile (0.998 is the probability of interest for the competition, but we can choose a lower quantile for the cross-validation to avoid overfitting)#
+ptarget <- 0.998#
+#
+### Recompute/Refit objects/models, if they already exist?#
+recompute <- FALSE#
+#
+### Model number#
+ModNb <- 304#
+###### Prepare results to submit according to the two challenges #####
+if(!file.exists(paste0(OUT,"Model",ModNb,"/C1.csv")) | !file.exists(paste0(OUT,"Model",ModNb,"/C2.csv")) | recompute){#
+	C1 = c(2, 4:6, 11:13, 15:16, 18:26, 28:30, 32:36, 38:40) #stations to predict for challenge 1#
+	C2 = union(C1, c(7:10, 37)) #stations to predict for challenge 2#
+	load(file=paste0(OUT,"Model",ModNb,"/qtargetm.est.p",ptarget,".RW2",useRW2,".fixsdweek",fix2Initial,".posquant",usePositiveQuantile,".pthresh",pthresh,".matrange",matrange,".sdweek",initialsd,".Rdata"))#
+	write.table(t(qtargetm.est)[C1, ], file = paste0(OUT,"Model",ModNb,"/C1.csv"), col.names = c(paste0("X", 1:12)), row.names = C1)#
+	write.table(t(qtargetm.est)[C2, ], file = paste0(OUT,"Model",ModNb,"/C2.csv"), col.names = c(paste0("X", 1:12)), row.names = C2)#
+}
+#########################
+#########################
+### INPUT PARAMETERS ####
+#########################
+#########################
+### Use random walk of order 2 (instead of order 1) for the weekly effect?#
+### You must use different folders OUT (below) for useRW2=TRUE/FALSE (otherwise you will get conflicting file names)#
+useRW2 <- TRUE#
+#
+### Define the threshold in terms of the pthresh-quantile of the positive precipitation part? (otherwise 0 + positive together)#
+### You must use different folders OUT (below) for usePositiveQuantile=TRUE/FALSE (otherwise you will get conflicting file names)#
+usePositiveQuantile <- TRUE#
+#
+### Initial value for the precision parameter of the random walk over weeks#
+initialsd <- 0.02#
+initialprec <- 1/initialsd^2#
+#
+### Fix this initial value? (i.e., do not estimate this hyperparameter)#
+### You must use different folders OUT (below) for fix2Initial=TRUE/FALSE (otherwise you will get conflicting file names)#
+fix2Initial <- TRUE#
+#
+### Quantile of the GP excess containing the linear predictor; since the quantile to predict is threshold-dependent, we cannot directly use it here (this is just a parameter)#
+### This does not really have any influence on the fit (but its value must be the same in the results_eva_cv.R file)#
+qprob <- 0.5#
+#
+### Probability corresponding to estimated high threshold#
+pthresh <- 0.93#
+#
+### Matern range#
+matrange <- 150#
+#
+### Target quantile (0.998 is the probability of interest for the competition, but we can choose a lower quantile for the cross-validation to avoid overfitting)#
+ptarget <- 0.998#
+#
+### Recompute/Refit objects/models, if they already exist?#
+recompute <- FALSE#
+#
+### Model number#
+ModNb <- 333#
+###### Prepare results to submit according to the two challenges #####
+if(!file.exists(paste0(OUT,"Model",ModNb,"/C1.csv")) | !file.exists(paste0(OUT,"Model",ModNb,"/C2.csv")) | recompute){#
+	C1 = c(2, 4:6, 11:13, 15:16, 18:26, 28:30, 32:36, 38:40) #stations to predict for challenge 1#
+	C2 = union(C1, c(7:10, 37)) #stations to predict for challenge 2#
+	load(file=paste0(OUT,"Model",ModNb,"/qtargetm.est.p",ptarget,".RW2",useRW2,".fixsdweek",fix2Initial,".posquant",usePositiveQuantile,".pthresh",pthresh,".matrange",matrange,".sdweek",initialsd,".Rdata"))#
+	write.table(t(qtargetm.est)[C1, ], file = paste0(OUT,"Model",ModNb,"/C1.csv"), col.names = c(paste0("X", 1:12)), row.names = C1)#
+	write.table(t(qtargetm.est)[C2, ], file = paste0(OUT,"Model",ModNb,"/C2.csv"), col.names = c(paste0("X", 1:12)), row.names = C2)#
+}
+prelimC1 <- read.table(file="~/Documents/Work/05_AssistantProfessor-KAUST/Research/INLA_for_Exceedances/clusterKAUST/INLA_Competition_Shaheen/Outputs/Preliminary_Predictions/C1.csv",header=TRUE)
+prelimC2 <- read.table(file="~/Documents/Work/05_AssistantProfessor-KAUST/Research/INLA_for_Exceedances/clusterKAUST/INLA_Competition_Shaheen/Outputs/Preliminary_Predictions/C2.csv",header=TRUE)
+finalC1 <- read.table(file="~/Documents/Work/05_AssistantProfessor-KAUST/Research/INLA_for_Exceedances/clusterKAUST/INLA_Competition_Shaheen/Outputs/Model122/C1.csv",header=TRUE)
+finalC2 <- read.table(file="~/Documents/Work/05_AssistantProfessor-KAUST/Research/INLA_for_Exceedances/clusterKAUST/INLA_Competition_Shaheen/Outputs/Model122/C2.csv",header=TRUE)
+prelimC1
+finalC1
+plot(prelimC1[1,],type="l")
+prelimC1[1,]
+prelimC1[1,-1]
+plot(prelimC1[1,-1],type="l")
+prelimC1 <- as.numeric(read.table(file="~/Documents/Work/05_AssistantProfessor-KAUST/Research/INLA_for_Exceedances/clusterKAUST/INLA_Competition_Shaheen/Outputs/Preliminary_Predictions/C1.csv",header=TRUE))
+prelimC1 <- read.table(file="~/Documents/Work/05_AssistantProfessor-KAUST/Research/INLA_for_Exceedances/clusterKAUST/INLA_Competition_Shaheen/Outputs/Preliminary_Predictions/C1.csv",header=TRUE)
+plot(as.numeric(prelimC1[1,-1]),type="l")
+lines(as.numeric(finalC1[1,]),"red")
+lines(as.numeric(finalC1[1,-1]),"red")
+as.numeric(finalC1[1,])
+length(as.numeric(finalC1[1,]))
+plot(1:12,as.numeric(prelimC1[1,-1]),type="l")
+lines(1:12,as.numeric(finalC1[1,]),"red")
+lines(1:12,as.numeric(finalC1[1,]),col="red")
+plot(1:12,as.numeric(prelimC1[1,-1]),type="l",ylim=range(as.numeric(prelimC1[1,-1]),as.numeric(finalC1[1,])))
+lines(1:12,as.numeric(finalC1[1,]),col="red")
+dim(finalC2)
+par(mfrow=c(5,7))
+for(i in 1:34){ plot(1:12,as.numeric(prelimC1[i,-1]),type="l",ylim=range(as.numeric(prelimC1[i,-1]),as.numeric(finalC1[i,]))); lines(1:12,as.numeric(finalC1[i,]),col="red"); legend(x="topleft",lty=1,col=c("black","red"),legend=c("Prelim","Final"))}
+for(i in 1:34){ plot(1:12,as.numeric(prelimC1[i,-1]),type="l",ylim=range(as.numeric(prelimC1[i,-1]),as.numeric(finalC1[i,])),main=prelimC1[i,1]); lines(1:12,as.numeric(finalC1[i,]),col="red"); legend(x="topleft",lty=1,col=c("black","red"),legend=c("Prelim","Final"))}
+par(mfrow=c(5,7))
+for(i in 1:34){ plot(1:12,as.numeric(prelimC1[i,-1]),type="l",ylim=range(as.numeric(prelimC1[i,-1]),as.numeric(finalC1[i,])),main=prelimC1[i,1]); lines(1:12,as.numeric(finalC1[i,]),col="red"); legend(x="topleft",lty=1,col=c("black","red"),legend=c("Prelim","Final"))}
+for(i in 1:34){ plot(1:12,as.numeric(prelimC1[i,-1]),type="l",ylim=range(as.numeric(prelimC1[i,-1]),as.numeric(finalC1[i,])),main=paste("Station",prelimC1[i,1]), xlab="Month", ylab="Predicted 0.998-quantile"); lines(1:12,as.numeric(finalC1[i,]),col="red"); legend(x="topleft",lty=1,col=c("black","red"),legend=c("Prelim","Final"))}
+par(mfrow=c(5,7))
+for(i in 1:34){ plot(1:12,as.numeric(prelimC1[i,-1]),type="l",ylim=range(as.numeric(prelimC1[i,-1]),as.numeric(finalC1[i,])),main=paste("Station",prelimC1[i,1]), xlab="Month", ylab="Predicted 0.998-quantile"); lines(1:12,as.numeric(finalC1[i,]),col="red"); legend(x="topleft",lty=1,col=c("black","red"),legend=c("Prelim","Final"))}
+prelimC1[,-1]
+prelimC1
+finalC1
+prelimC2
+finalC2
+dim(finalC2)
+any(finalC2==Inf)
+any(finalC2==-Inf)
+any(PrelimC2==Inf)
+any(prelimC2==Inf)
+any(prelimC2==-Inf)
+par(mfrow=c(5,7))
+for(i in 1:34){ print(i); plot(1:12,as.numeric(prelimC1[i,-1]),type="l",ylim=range(as.numeric(prelimC1[i,-1]),as.numeric(finalC1[i,])),main=paste("Station",prelimC1[i,1]), xlab="Month", ylab="Predicted 0.998-quantile"); lines(1:12,as.numeric(finalC1[i,]),col="red"); legend(x="topleft",lty=1,col=c("black","red"),legend=c("Prelim","Final"))}
+i
+as.numeric(prelimC1[i,-1])
+as.numeric(finalC1[i,])
+finalC1[34,]
+par(mfrow=c(5,7))
+for(i in 1:34){ print(i); plot(1:12,as.numeric(prelimC2[i,-1]),type="l",ylim=range(as.numeric(prelimC2[i,-1]),as.numeric(finalC2[i,])),main=paste("Station",prelimC2[i,1]), xlab="Month", ylab="Predicted 0.998-quantile"); lines(1:12,as.numeric(finalC2[i,]),col="red"); legend(x="topleft",lty=1,col=c("black","red"),legend=c("Prelim","Final"))}
+prelimC1 <- as.numeric(read.table(file="~/Documents/Work/05_AssistantProfessor-KAUST/Research/INLA_for_Exceedances/clusterKAUST/INLA_Competition_Shaheen/Outputs/Preliminary_Predictions/C1.csv",header=TRUE))
+######################################################
+######################################################
+### Load and Source Necessary Libraries and Files ####
+######################################################
+######################################################
+BASE <- "~/Documents/Work/05_AssistantProfessor-KAUST/Research/INLA_for_Exceedances/clusterKAUST/INLA_Competition_Shaheen/"#
+OUT <- paste0(BASE, "Outputs/")#
+#########################
+#########################
+### INPUT PARAMETERS ####
+#########################
+#########################
+### Use random walk of order 2 (instead of order 1) for the weekly effect?#
+### You must use different folders OUT (below) for useRW2=TRUE/FALSE (otherwise you will get conflicting file names)#
+useRW2 <- TRUE#
+#
+### Define the threshold in terms of the pthresh-quantile of the positive precipitation part? (otherwise 0 + positive together)#
+### You must use different folders OUT (below) for usePositiveQuantile=TRUE/FALSE (otherwise you will get conflicting file names)#
+usePositiveQuantile <- TRUE#
+#
+### Initial value for the precision parameter of the random walk over weeks#
+initialsd <- 0.02#
+initialprec <- 1/initialsd^2#
+#
+### Fix this initial value? (i.e., do not estimate this hyperparameter)#
+### You must use different folders OUT (below) for fix2Initial=TRUE/FALSE (otherwise you will get conflicting file names)#
+fix2Initial <- TRUE#
+#
+### Quantile of the GP excess containing the linear predictor; since the quantile to predict is threshold-dependent, we cannot directly use it here (this is just a parameter)#
+### This does not really have any influence on the fit (but its value must be the same in the results_eva_cv.R file)#
+qprob <- 0.5#
+#
+### Probability corresponding to estimated high threshold#
+pthresh <- 0.93#
+#
+### Matern range#
+matrange <- 150#
+#
+### Target quantile (0.998 is the probability of interest for the competition, but we can choose a lower quantile for the cross-validation to avoid overfitting)#
+ptarget <- 0.998#
+#
+### Recompute/Refit objects/models, if they already exist?#
+recompute <- FALSE#
+#
+### Model number#
+ModNb <- 333#
+###### Prepare results to submit according to the two challenges #####
+if(!file.exists(paste0(OUT,"Model",ModNb,"/C1.csv")) | !file.exists(paste0(OUT,"Model",ModNb,"/C2.csv")) | recompute){#
+	C1 = c(2, 4:6, 11:13, 15:16, 18:26, 28:30, 32:36, 38:40) #stations to predict for challenge 1#
+	C2 = union(C1, c(7:10, 37)) #stations to predict for challenge 2#
+	load(file=paste0(OUT,"Model",ModNb,"/qtargetm.est.p",ptarget,".RW2",useRW2,".fixsdweek",fix2Initial,".posquant",usePositiveQuantile,".pthresh",pthresh,".matrange",matrange,".sdweek",initialsd,".Rdata"))#
+	write.table(t(qtargetm.est)[C1, ], file = paste0(OUT,"Model",ModNb,"/C1.csv"), col.names = c(paste0("X", 1:12)), row.names = C1)#
+	write.table(t(qtargetm.est)[C2, ], file = paste0(OUT,"Model",ModNb,"/C2.csv"), col.names = c(paste0("X", 1:12)), row.names = C2)#
+}#
+###### Comparison with Preliminary results #####
+if(!file.exists(paste0(OUT,"Model",ModNb,"/Comparison_with_Preliminary_Results.pdf"))) | recompute){#
+	prelimC1 <- read.table(file=paste0(OUT,"Preliminary_Predictions/C1.csv"),header=TRUE)#
+	prelimC2 <- read.table(file=paste0(OUT,"Preliminary_Predictions/C2.csv"),header=TRUE)#
+	finalC1 <- read.table(file=paste0(OUT,"Model",ModNb,"/C1.csv"),header=TRUE)#
+	finalC2 <- read.table(file=paste0(OUT,"Model",ModNb,"/C2.csv"),header=TRUE)#
+	pdf(file=paste0(OUT,"Model",ModNb,"/Comparison_with_Preliminary_Results.pdf"),width=15,height=12,onefile=TRUE)#
+	par(mfrow=c(5,7))#
+	for(i in 1:34){ #
+		plot(1:12,as.numeric(prelimC2[i,-1]),type="l",ylim=range(as.numeric(prelimC2[i,-1]),as.numeric(finalC2[i,])),main=paste("Station",prelimC2[i,1]), xlab="Month", ylab="Predicted 0.998-quantile")#
+		lines(1:12,as.numeric(finalC2[i,]),col="red")#
+		legend(x="topleft",lty=1,col=c("black","red"),legend=c("Prelim","Final"))#
+	}#
+	dev.off()#
+}
+!file.exists(paste0(OUT,"Model",ModNb,"/Comparison_with_Preliminary_Results.pdf")))
+###### Comparison with Preliminary results #####
+if(!file.exists(paste0(OUT,"Model",ModNb,"/Comparison_with_Preliminary_Results.pdf")) | recompute){#
+	prelimC1 <- read.table(file=paste0(OUT,"Preliminary_Predictions/C1.csv"),header=TRUE)#
+	prelimC2 <- read.table(file=paste0(OUT,"Preliminary_Predictions/C2.csv"),header=TRUE)#
+	finalC1 <- read.table(file=paste0(OUT,"Model",ModNb,"/C1.csv"),header=TRUE)#
+	finalC2 <- read.table(file=paste0(OUT,"Model",ModNb,"/C2.csv"),header=TRUE)#
+	pdf(file=paste0(OUT,"Model",ModNb,"/Comparison_with_Preliminary_Results.pdf"),width=15,height=12,onefile=TRUE)#
+	par(mfrow=c(5,7))#
+	for(i in 1:34){ #
+		plot(1:12,as.numeric(prelimC2[i,-1]),type="l",ylim=range(as.numeric(prelimC2[i,-1]),as.numeric(finalC2[i,])),main=paste("Station",prelimC2[i,1]), xlab="Month", ylab="Predicted 0.998-quantile")#
+		lines(1:12,as.numeric(finalC2[i,]),col="red")#
+		legend(x="topleft",lty=1,col=c("black","red"),legend=c("Prelim","Final"))#
+	}#
+	dev.off()#
+}
+###### Comparison with Preliminary results #####
+if(!file.exists(paste0(OUT,"Model",ModNb,"/Comparison_with_Preliminary_Results.pdf")) | recompute){#
+	prelimC1 <- read.table(file=paste0(OUT,"Preliminary_Predictions/C1.csv"),header=TRUE)#
+	prelimC2 <- read.table(file=paste0(OUT,"Preliminary_Predictions/C2.csv"),header=TRUE)#
+	finalC1 <- read.table(file=paste0(OUT,"Model",ModNb,"/C1.csv"),header=TRUE)#
+	finalC2 <- read.table(file=paste0(OUT,"Model",ModNb,"/C2.csv"),header=TRUE)#
+	pdf(file=paste0(OUT,"Model",ModNb,"/Comparison_with_Preliminary_Results.pdf"),width=20,height=12,onefile=TRUE)#
+	par(mfrow=c(5,7))#
+	for(i in 1:34){ #
+		plot(1:12,as.numeric(prelimC2[i,-1]),type="l",ylim=range(as.numeric(prelimC2[i,-1]),as.numeric(finalC2[i,])),main=paste("Station",prelimC2[i,1]), xlab="Month", ylab="Predicted 0.998-quantile")#
+		lines(1:12,as.numeric(finalC2[i,]),col="red")#
+		legend(x="topleft",lty=1,col=c("black","red"),legend=c("Prelim","Final"))#
+	}#
+	dev.off()#
+}
+?par
+###### Comparison with Preliminary results #####
+if(!file.exists(paste0(OUT,"Model",ModNb,"/Comparison_with_Preliminary_Results.pdf")) | recompute){#
+	prelimC1 <- read.table(file=paste0(OUT,"Preliminary_Predictions/C1.csv"),header=TRUE)#
+	prelimC2 <- read.table(file=paste0(OUT,"Preliminary_Predictions/C2.csv"),header=TRUE)#
+	finalC1 <- read.table(file=paste0(OUT,"Model",ModNb,"/C1.csv"),header=TRUE)#
+	finalC2 <- read.table(file=paste0(OUT,"Model",ModNb,"/C2.csv"),header=TRUE)#
+	pdf(file=paste0(OUT,"Model",ModNb,"/Comparison_with_Preliminary_Results.pdf"),width=20,height=12,onefile=TRUE)#
+	par(mfrow=c(5,7),cex=0.5,cex.lab=0.5,cex.axis=0.5,cex.main=0.5,cex.sub=0.5,mar=c(3,3,2,1))#
+	for(i in 1:34){ #
+		plot(1:12,as.numeric(prelimC2[i,-1]),type="l",ylim=range(as.numeric(prelimC2[i,-1]),as.numeric(finalC2[i,])),main=paste("Station",prelimC2[i,1]), xlab="Month", ylab="Predicted 0.998-quantile")#
+		lines(1:12,as.numeric(finalC2[i,]),col="red")#
+		legend(x="topleft",lty=1,col=c("black","red"),legend=c("Prelim","Final"))#
+	}#
+	dev.off()#
+}
+###### Comparison with Preliminary results #####
+if(!file.exists(paste0(OUT,"Model",ModNb,"/Comparison_with_Preliminary_Results.pdf")) | recompute){#
+	prelimC1 <- read.table(file=paste0(OUT,"Preliminary_Predictions/C1.csv"),header=TRUE)#
+	prelimC2 <- read.table(file=paste0(OUT,"Preliminary_Predictions/C2.csv"),header=TRUE)#
+	finalC1 <- read.table(file=paste0(OUT,"Model",ModNb,"/C1.csv"),header=TRUE)#
+	finalC2 <- read.table(file=paste0(OUT,"Model",ModNb,"/C2.csv"),header=TRUE)#
+	pdf(file=paste0(OUT,"Model",ModNb,"/Comparison_with_Preliminary_Results.pdf"),width=20,height=12,onefile=TRUE)#
+	par(mfrow=c(5,7),cex=1,cex.lab=1,cex.axis=1,cex.main=1,cex.sub=1,mar=c(3,3,2,1))#
+	for(i in 1:34){ #
+		plot(1:12,as.numeric(prelimC2[i,-1]),type="l",ylim=range(as.numeric(prelimC2[i,-1]),as.numeric(finalC2[i,])),main=paste("Station",prelimC2[i,1]), xlab="Month", ylab="Predicted 0.998-quantile")#
+		lines(1:12,as.numeric(finalC2[i,]),col="red")#
+		legend(x="topleft",lty=1,col=c("black","red"),legend=c("Prelim","Final"))#
+	}#
+	dev.off()#
+}
+###### Comparison with Preliminary results #####
+if(!file.exists(paste0(OUT,"Model",ModNb,"/Comparison_with_Preliminary_Results.pdf")) | recompute){#
+	prelimC1 <- read.table(file=paste0(OUT,"Preliminary_Predictions/C1.csv"),header=TRUE)#
+	prelimC2 <- read.table(file=paste0(OUT,"Preliminary_Predictions/C2.csv"),header=TRUE)#
+	finalC1 <- read.table(file=paste0(OUT,"Model",ModNb,"/C1.csv"),header=TRUE)#
+	finalC2 <- read.table(file=paste0(OUT,"Model",ModNb,"/C2.csv"),header=TRUE)#
+	pdf(file=paste0(OUT,"Model",ModNb,"/Comparison_with_Preliminary_Results.pdf"),width=20,height=12,onefile=TRUE)#
+	par(mfrow=c(5,7),cex=0.8,cex.lab=0.8,cex.axis=0.8,cex.main=0.8,cex.sub=0.8,mar=c(3,3,2,1))#
+	for(i in 1:34){ #
+		plot(1:12,as.numeric(prelimC2[i,-1]),type="l",ylim=range(as.numeric(prelimC2[i,-1]),as.numeric(finalC2[i,])),main=paste("Station",prelimC2[i,1]), xlab="Month", ylab="Predicted 0.998-quantile")#
+		lines(1:12,as.numeric(finalC2[i,]),col="red")#
+		legend(x="topleft",lty=1,col=c("black","red"),legend=c("Prelim","Final"))#
+	}#
+	dev.off()#
+}
+###### Comparison with Preliminary results #####
+if(!file.exists(paste0(OUT,"Model",ModNb,"/Comparison_with_Preliminary_Results.pdf")) | recompute){#
+	prelimC1 <- read.table(file=paste0(OUT,"Preliminary_Predictions/C1.csv"),header=TRUE)#
+	prelimC2 <- read.table(file=paste0(OUT,"Preliminary_Predictions/C2.csv"),header=TRUE)#
+	finalC1 <- read.table(file=paste0(OUT,"Model",ModNb,"/C1.csv"),header=TRUE)#
+	finalC2 <- read.table(file=paste0(OUT,"Model",ModNb,"/C2.csv"),header=TRUE)#
+	pdf(file=paste0(OUT,"Model",ModNb,"/Comparison_with_Preliminary_Results.pdf"),width=20,height=12,onefile=TRUE)#
+	par(mfrow=c(5,7),cex=0.8,cex.lab=0.8,cex.axis=0.8,cex.main=0.8,cex.sub=0.8,mar=c(3,3,2,1),mgp=c(2,1,0))#
+	for(i in 1:34){ #
+		plot(1:12,as.numeric(prelimC2[i,-1]),type="l",ylim=range(as.numeric(prelimC2[i,-1]),as.numeric(finalC2[i,])),main=paste("Station",prelimC2[i,1]), xlab="Month", ylab="Predicted 0.998-quantile")#
+		lines(1:12,as.numeric(finalC2[i,]),col="red")#
+		legend(x="topleft",lty=1,col=c("black","red"),legend=c("Prelim","Final"))#
+	}#
+	dev.off()#
+}
+######################################################
+######################################################
+### Load and Source Necessary Libraries and Files ####
+######################################################
+######################################################
+BASE <- "~/Documents/Work/05_AssistantProfessor-KAUST/Research/INLA_for_Exceedances/clusterKAUST/INLA_Competition_Shaheen/"#
+OUT <- paste0(BASE, "Outputs/")#
+#########################
+#########################
+### INPUT PARAMETERS ####
+#########################
+#########################
+### Use random walk of order 2 (instead of order 1) for the weekly effect?#
+### You must use different folders OUT (below) for useRW2=TRUE/FALSE (otherwise you will get conflicting file names)#
+useRW2 <- TRUE#
+#
+### Define the threshold in terms of the pthresh-quantile of the positive precipitation part? (otherwise 0 + positive together)#
+### You must use different folders OUT (below) for usePositiveQuantile=TRUE/FALSE (otherwise you will get conflicting file names)#
+usePositiveQuantile <- TRUE#
+#
+### Initial value for the precision parameter of the random walk over weeks#
+initialsd <- 0.02#
+initialprec <- 1/initialsd^2#
+#
+### Fix this initial value? (i.e., do not estimate this hyperparameter)#
+### You must use different folders OUT (below) for fix2Initial=TRUE/FALSE (otherwise you will get conflicting file names)#
+fix2Initial <- TRUE#
+#
+### Quantile of the GP excess containing the linear predictor; since the quantile to predict is threshold-dependent, we cannot directly use it here (this is just a parameter)#
+### This does not really have any influence on the fit (but its value must be the same in the results_eva_cv.R file)#
+qprob <- 0.5#
+#
+### Probability corresponding to estimated high threshold#
+pthresh <- 0.9#
+#
+### Matern range#
+matrange <- 200#
+#
+### Target quantile (0.998 is the probability of interest for the competition, but we can choose a lower quantile for the cross-validation to avoid overfitting)#
+ptarget <- 0.998#
+#
+### Recompute/Refit objects/models, if they already exist?#
+recompute <- FALSE#
+#
+### Model number#
+ModNb <- 304#
+###### Prepare results to submit according to the two challenges #####
+if(!file.exists(paste0(OUT,"Model",ModNb,"/C1.csv")) | !file.exists(paste0(OUT,"Model",ModNb,"/C2.csv")) | recompute){#
+	C1 = c(2, 4:6, 11:13, 15:16, 18:26, 28:30, 32:36, 38:40) #stations to predict for challenge 1#
+	C2 = union(C1, c(7:10, 37)) #stations to predict for challenge 2#
+	load(file=paste0(OUT,"Model",ModNb,"/qtargetm.est.p",ptarget,".RW2",useRW2,".fixsdweek",fix2Initial,".posquant",usePositiveQuantile,".pthresh",pthresh,".matrange",matrange,".sdweek",initialsd,".Rdata"))#
+	write.table(t(qtargetm.est)[C1, ], file = paste0(OUT,"Model",ModNb,"/C1.csv"), col.names = c(paste0("X", 1:12)), row.names = C1)#
+	write.table(t(qtargetm.est)[C2, ], file = paste0(OUT,"Model",ModNb,"/C2.csv"), col.names = c(paste0("X", 1:12)), row.names = C2)#
+}#
+###### Comparison with Preliminary results #####
+if(!file.exists(paste0(OUT,"Model",ModNb,"/Comparison_with_Preliminary_Results.pdf")) | recompute){#
+	prelimC1 <- read.table(file=paste0(OUT,"Preliminary_Predictions/C1.csv"),header=TRUE)#
+	prelimC2 <- read.table(file=paste0(OUT,"Preliminary_Predictions/C2.csv"),header=TRUE)#
+	finalC1 <- read.table(file=paste0(OUT,"Model",ModNb,"/C1.csv"),header=TRUE)#
+	finalC2 <- read.table(file=paste0(OUT,"Model",ModNb,"/C2.csv"),header=TRUE)#
+	pdf(file=paste0(OUT,"Model",ModNb,"/Comparison_with_Preliminary_Results.pdf"),width=20,height=12,onefile=TRUE)#
+	par(mfrow=c(5,7),cex=0.8,cex.lab=0.8,cex.axis=0.8,cex.main=0.8,cex.sub=0.8,mar=c(3,3,2,1),mgp=c(2,1,0))#
+	for(i in 1:34){ #
+		plot(1:12,as.numeric(prelimC2[i,-1]),type="l",ylim=range(as.numeric(prelimC2[i,-1]),as.numeric(finalC2[i,])),main=paste("Station",prelimC2[i,1]), xlab="Month", ylab="Predicted 0.998-quantile")#
+		lines(1:12,as.numeric(finalC2[i,]),col="red")#
+		legend(x="topleft",lty=1,col=c("black","red"),legend=c("Prelim","Final"))#
+	}#
+	dev.off()#
+}
+######################################################
+######################################################
+### Load and Source Necessary Libraries and Files ####
+######################################################
+######################################################
+BASE <- "~/Documents/Work/05_AssistantProfessor-KAUST/Research/INLA_for_Exceedances/clusterKAUST/INLA_Competition_Shaheen/"#
+OUT <- paste0(BASE, "Outputs/")#
+#########################
+#########################
+### INPUT PARAMETERS ####
+#########################
+#########################
+### Use random walk of order 2 (instead of order 1) for the weekly effect?#
+### You must use different folders OUT (below) for useRW2=TRUE/FALSE (otherwise you will get conflicting file names)#
+useRW2 <- TRUE#
+#
+### Define the threshold in terms of the pthresh-quantile of the positive precipitation part? (otherwise 0 + positive together)#
+### You must use different folders OUT (below) for usePositiveQuantile=TRUE/FALSE (otherwise you will get conflicting file names)#
+usePositiveQuantile <- TRUE#
+#
+### Initial value for the precision parameter of the random walk over weeks#
+initialsd <- 0.01#
+initialprec <- 1/initialsd^2#
+#
+### Fix this initial value? (i.e., do not estimate this hyperparameter)#
+### You must use different folders OUT (below) for fix2Initial=TRUE/FALSE (otherwise you will get conflicting file names)#
+fix2Initial <- TRUE#
+#
+### Quantile of the GP excess containing the linear predictor; since the quantile to predict is threshold-dependent, we cannot directly use it here (this is just a parameter)#
+### This does not really have any influence on the fit (but its value must be the same in the results_eva_cv.R file)#
+qprob <- 0.5#
+#
+### Probability corresponding to estimated high threshold#
+pthresh <- 0.92#
+#
+### Matern range#
+matrange <- 100#
+#
+### Target quantile (0.998 is the probability of interest for the competition, but we can choose a lower quantile for the cross-validation to avoid overfitting)#
+ptarget <- 0.998#
+#
+### Recompute/Refit objects/models, if they already exist?#
+recompute <- FALSE#
+#
+### Model number#
+ModNb <- 122#
+###### Prepare results to submit according to the two challenges #####
+if(!file.exists(paste0(OUT,"Model",ModNb,"/C1.csv")) | !file.exists(paste0(OUT,"Model",ModNb,"/C2.csv")) | recompute){#
+	C1 = c(2, 4:6, 11:13, 15:16, 18:26, 28:30, 32:36, 38:40) #stations to predict for challenge 1#
+	C2 = union(C1, c(7:10, 37)) #stations to predict for challenge 2#
+	load(file=paste0(OUT,"Model",ModNb,"/qtargetm.est.p",ptarget,".RW2",useRW2,".fixsdweek",fix2Initial,".posquant",usePositiveQuantile,".pthresh",pthresh,".matrange",matrange,".sdweek",initialsd,".Rdata"))#
+	write.table(t(qtargetm.est)[C1, ], file = paste0(OUT,"Model",ModNb,"/C1.csv"), col.names = c(paste0("X", 1:12)), row.names = C1)#
+	write.table(t(qtargetm.est)[C2, ], file = paste0(OUT,"Model",ModNb,"/C2.csv"), col.names = c(paste0("X", 1:12)), row.names = C2)#
+}#
+###### Comparison with Preliminary results #####
+if(!file.exists(paste0(OUT,"Model",ModNb,"/Comparison_with_Preliminary_Results.pdf")) | recompute){#
+	prelimC1 <- read.table(file=paste0(OUT,"Preliminary_Predictions/C1.csv"),header=TRUE)#
+	prelimC2 <- read.table(file=paste0(OUT,"Preliminary_Predictions/C2.csv"),header=TRUE)#
+	finalC1 <- read.table(file=paste0(OUT,"Model",ModNb,"/C1.csv"),header=TRUE)#
+	finalC2 <- read.table(file=paste0(OUT,"Model",ModNb,"/C2.csv"),header=TRUE)#
+	pdf(file=paste0(OUT,"Model",ModNb,"/Comparison_with_Preliminary_Results.pdf"),width=20,height=12,onefile=TRUE)#
+	par(mfrow=c(5,7),cex=0.8,cex.lab=0.8,cex.axis=0.8,cex.main=0.8,cex.sub=0.8,mar=c(3,3,2,1),mgp=c(2,1,0))#
+	for(i in 1:34){ #
+		plot(1:12,as.numeric(prelimC2[i,-1]),type="l",ylim=range(as.numeric(prelimC2[i,-1]),as.numeric(finalC2[i,])),main=paste("Station",prelimC2[i,1]), xlab="Month", ylab="Predicted 0.998-quantile")#
+		lines(1:12,as.numeric(finalC2[i,]),col="red")#
+		legend(x="topleft",lty=1,col=c("black","red"),legend=c("Prelim","Final"))#
+	}#
+	dev.off()#
+}
+######################################################
+######################################################
+### Load and Source Necessary Libraries and Files ####
+######################################################
+######################################################
+.libPaths(c("/scratch/huserrg/R/3.3", .libPaths()))#
+print(.libPaths())#
+#
+library(methods)#
+library(parallel)#
+library(fields)#
+library(INLA)#
+INLA:::inla.dynload.workaround()#
+#
+BASE <- "/scratch/huserrg/INLA_Competition_Shaheen/"#
+DATA <- paste0(BASE, "Data/")#
+CODE <- paste0(BASE, "R_Code/")#
+OUT <- paste0(BASE, "Outputs/")#
+#########################
+#########################
+### INPUT PARAMETERS ####
+#########################
+#########################
+### Use random walk of order 2 (instead of order 1) for the weekly effect?#
+### You must use different folders OUT (below) for useRW2=TRUE/FALSE (otherwise you will get conflicting file names)#
+#useRW2 <- TRUE#
+#
+### Define the threshold in terms of the pthresh-quantile of the positive precipitation part? (otherwise 0 + positive together)#
+### You must use different folders OUT (below) for usePositiveQuantile=TRUE/FALSE (otherwise you will get conflicting file names)#
+#usePositiveQuantile <- FALSE#
+#
+### Initial value for the precision parameter of the random walk over weeks#
+#initialsd <- 0.025#
+initialprec <- 1/initialsd^2#
+#
+### Fix this initial value? (i.e., do not estimate this hyperparameter)#
+### You must use different folders OUT (below) for fix2Initial=TRUE/FALSE (otherwise you will get conflicting file names)#
+#fix2Initial <- TRUE#
+#
+### Quantile of the GP excess containing the linear predictor; since the quantile to predict is threshold-dependent, we cannot directly use it here (this is just a parameter)#
+### This does not really have any influence on the fit (but its value must be the same in the results_eva_cv.R file)#
+#qprob <- 0.5#
+#
+### Probability corresponding to estimated high threshold#
+#pthresh <- 0.99#
+#
+### Matern range#
+#matrange <- 150#
+#
+### Number of cross-validation (between 1 an 59, see below; 1 to 35 for prediction at site (spatial leave one out); 36:59 for prediction at year (yearly leave one out))#
+#cvsample.vec <- c(1:59)#
+#
+### Recompute/Refit objects/models, if they already exist?#
+#recompute <- FALSE#
+#
+### Which fits should be performed?#
+#fits <- c("gamma","binom.absence","thr","binom.pexc","gpd")#
+#
+### Number of cores for computing cross-validation runs in parallel#
+#ncores.cv <- 10 ### how many cores to run the cross-validation in parallel?#
+#ncores.inla <- 1 ### how many cores to fit the models using INLA in parallel?
+matrange <- 100
+source(paste0(CODE, "import_data.R"))
+BASE <- "~/Documents/Work/05_AssistantProfessor-KAUST/Research/INLA_for_Exceedances/clusterKAUST/INLA_Competition_Shaheen/"
+DATA <- paste0(BASE, "Data/")#
+CODE <- paste0(BASE, "R_Code/")#
+OUT <- paste0(BASE, "Outputs/")#
+#########################
+#########################
+### INPUT PARAMETERS ####
+#########################
+#########################
+### Use random walk of order 2 (instead of order 1) for the weekly effect?#
+### You must use different folders OUT (below) for useRW2=TRUE/FALSE (otherwise you will get conflicting file names)#
+#useRW2 <- TRUE#
+#
+### Define the threshold in terms of the pthresh-quantile of the positive precipitation part? (otherwise 0 + positive together)#
+### You must use different folders OUT (below) for usePositiveQuantile=TRUE/FALSE (otherwise you will get conflicting file names)#
+#usePositiveQuantile <- FALSE#
+#
+### Initial value for the precision parameter of the random walk over weeks#
+#initialsd <- 0.025#
+initialprec <- 1/initialsd^2#
+#
+### Fix this initial value? (i.e., do not estimate this hyperparameter)#
+### You must use different folders OUT (below) for fix2Initial=TRUE/FALSE (otherwise you will get conflicting file names)#
+#fix2Initial <- TRUE#
+#
+### Quantile of the GP excess containing the linear predictor; since the quantile to predict is threshold-dependent, we cannot directly use it here (this is just a parameter)#
+### This does not really have any influence on the fit (but its value must be the same in the results_eva_cv.R file)#
+#qprob <- 0.5#
+#
+### Probability corresponding to estimated high threshold#
+#pthresh <- 0.99#
+#
+### Matern range#
+#matrange <- 150#
+#
+### Number of cross-validation (between 1 an 59, see below; 1 to 35 for prediction at site (spatial leave one out); 36:59 for prediction at year (yearly leave one out))#
+#cvsample.vec <- c(1:59)#
+#
+### Recompute/Refit objects/models, if they already exist?#
+#recompute <- FALSE#
+#
+### Which fits should be performed?#
+#fits <- c("gamma","binom.absence","thr","binom.pexc","gpd")#
+#
+### Number of cores for computing cross-validation runs in parallel#
+#ncores.cv <- 10 ### how many cores to run the cross-validation in parallel?#
+#ncores.inla <- 1 ### how many cores to fit the models using INLA in parallel?
+source(paste0(CODE, "import_data.R"))
+dim(prcp.mat)
+quantile(prcp.mat,0.998,na.rm=TRUE)
+max(prcp.mat,na.rm=TRUE)
+quantile(prcp.mat,0.999,na.rm=TRUE)
+quantile(prcp.mat,0.9995,na.rm=TRUE)
+mean(prcp.mat<=3)
+mean(prcp.mat<=3,na.rm=TRUE)
+rm(list=ls())
+load('~/Documents/Work/05_AssistantProfessor-KAUST/Research/INLA_for_Exceedances/clusterKAUST/INLA_Competition_Shaheen/Outputs/scores.df_0.998_posquantFALSE.Rdata')#
+load('~/Documents/Work/05_AssistantProfessor-KAUST/Research/INLA_for_Exceedances/clusterKAUST/INLA_Competition_Shaheen/Outputs/scores.s.array_0.998_posquantFALSE.Rdata')#
+load('~/Documents/Work/05_AssistantProfessor-KAUST/Research/INLA_for_Exceedances/clusterKAUST/INLA_Competition_Shaheen/Outputs/scores.sy.array_0.998_posquantFALSE.Rdata')#
+load('~/Documents/Work/05_AssistantProfessor-KAUST/Research/INLA_for_Exceedances/clusterKAUST/INLA_Competition_Shaheen/Outputs/scores.y.array_0.998_posquantFALSE.Rdata')
+ls()
+######## ANALYSE RESULTS#
+scores.df.sort.stations.years <- scores.df[order(scores.df$scores.stations.years), ]#
+scores.df.sort.stations <- scores.df[order(scores.df$scores.stations), ]#
+scores.df.sort.years <- scores.df[order(scores.df$scores.years), ]#
+#
+head(scores.df.sort.stations.years)#
+head(scores.df.sort.stations)#
+head(scores.df.sort.years)
+par(mfrow = c(2, 3))#
+for (i in 1:5) {#
+	image.plot(seq(0.9, 0.99, by = 0.01), seq(50, 500, by = 50), scores.sy.array[i, , ], xlab = "Threshold probability", ylab = "Matern range", zlim = range(scores.sy.array[, , ]), main = paste("SD weekly effect:", seq(0.005, 0.025, by = 0.005)[i]))#
+}
+par(mfrow = c(2, 3))#
+for (i in 1:5) {#
+	image.plot(seq(0.9, 0.98, by = 0.01), seq(50, 500, by = 50), scores.sy.array[i, -10, ], xlab = "Threshold probability", ylab = "Matern range", zlim = range(scores.sy.array[, -10, ]), main = paste("SD weekly effect:", seq(0.005, 0.025, by = 0.005)[i]))#
+}
+par(mfrow = c(2, 3))#
+for (i in 1:5) {#
+	image.plot(seq(0.95, 0.99, by = 0.005), seq(50, 500, by = 50), scores.sy.array[i, -10, ], xlab = "Threshold probability", ylab = "Matern range", zlim = range(scores.sy.array[, -10, ]), main = paste("SD weekly effect:", seq(0.005, 0.025, by = 0.005)[i]))#
+}
+load('~/Documents/Work/05_AssistantProfessor-KAUST/Research/INLA_for_Exceedances/clusterKAUST/INLA_Competition_Shaheen/Outputs/scores.df_0.998_posquantTRUE.Rdata')#
+load('~/Documents/Work/05_AssistantProfessor-KAUST/Research/INLA_for_Exceedances/clusterKAUST/INLA_Competition_Shaheen/Outputs/scores.s.array_0.998_posquantTRUE.Rdata')#
+load('~/Documents/Work/05_AssistantProfessor-KAUST/Research/INLA_for_Exceedances/clusterKAUST/INLA_Competition_Shaheen/Outputs/scores.sy.array_0.998_posquantTRUE.Rdata')#
+load('~/Documents/Work/05_AssistantProfessor-KAUST/Research/INLA_for_Exceedances/clusterKAUST/INLA_Competition_Shaheen/Outputs/scores.y.array_0.998_posquantTRUE.Rdata')
+######## ANALYSE RESULTS#
+scores.df.sort.stations.years <- scores.df[order(scores.df$scores.stations.years), ]#
+scores.df.sort.stations <- scores.df[order(scores.df$scores.stations), ]#
+scores.df.sort.years <- scores.df[order(scores.df$scores.years), ]#
+#
+head(scores.df.sort.stations.years)#
+head(scores.df.sort.stations)#
+head(scores.df.sort.years)
+0.1*0.1
+0.1*0.1*4+0.2*0.2
+0.08/(3*6)
+1/225
+?optim
+rho <- exp(-(0.5/0.5)^1)
+rho
+2*pt(sqrt((1+1)*(1-rho)/(1+rho)))
+2*pt(sqrt((1+1)*(1-rho)/(1+rho)),df=1+1)
+load('~/Documents/Work/05_AssistantProfessor-KAUST/Research/Max-id_Thomas-Emeric/Shaheen_Cluster/Max-id/Outputs/Sim1/All/mle_r1_D10_n50_al1_be0_ra0.5_sm1.RData')
+ls()
+res
+library(ismev)#
+library(evd)#
+library(maps)#
+#
+wd <- "~/Dropbox/maxid-sharedfolder/R_Code_Raphael/R_Code/Wind_Analysis/"#
+setwd(wd)#
+load("winddata.Rdata")#
+#
+daily.data <- winddata$datamat#
+dates <- strptime(as.character(winddata$dates),format="%Y%m%d")#
+all.dates <- strptime(as.character(seq(from=min(as.Date(dates)),to=max(as.Date(dates)),by=1)),format="%Y-%m-%d")#
+all.years <- 1900+all.dates$year#
+all.months <- 1+all.dates$mon#
+all.days <- all.dates$mday#
+#
+S <- ncol(daily.data)#
+n <- length(all.dates)#
+#
+all.daily.data <- matrix(nrow=n,ncol=S)#
+for(i in 1:n){#
+	ind <- which(winddata$years==all.dates$year[i]+1900 & winddata$months==all.dates$mon[i]+1 & winddata$days==all.dates$mday[i])#
+	if(length(ind)>0){#
+		all.daily.data[ind,] <- daily.data[ind,]#
+	}#
+}#
+#
+### We consider only winter data (from October to March), as they appear stationary... (boxplots show a similar variability for these months)#
+winter.ind <- all.months==10 | all.months==11 | all.months==12 | all.months==1 | all.months==2 | all.months==3#
+#
+all.daily.data.withNA <- all.daily.data#
+all.daily.data.withNA[!winter.ind,] <- NA#
+#
+daily.data.winter <- all.daily.data[winter.ind,]#
+dates.winter <- all.dates[winter.ind]#
+years.winter <- all.years[winter.ind]#
+months.winter <- all.months[winter.ind]#
+days.winter <- all.days[winter.ind]#
+#
+daily.data <- as.matrix(na.omit(daily.data.winter))#
+n.daily <- nrow(daily.data)#
+#
+all.weekly.data <- matrix(nrow=ceiling(n/7),ncol=S)#
+time.weekly.maxima <- matrix(nrow=0,ncol=S)#
+for(i in 1:ceiling(n/7)){#
+	data.week.i <- all.daily.data.withNA[((i-1)*7+1):min(n,(i*7)),]#
+	if(any(is.na(data.week.i))){#
+		all.weekly.data[i,] <- rep(NA,S)#
+		time.weekly.maxima <- rbind(time.weekly.maxima,rep(NA,S))#
+	} else{#
+		all.weekly.data[i,] <- apply(data.week.i,2,max)#
+		time.weekly.maxima <- rbind(time.weekly.maxima,sapply(apply(data.week.i,2,which.max),FUN=function(x){a<-((i-1)*7+1):min(n,(i*7)); return(a[x])}))#
+	}#
+}#
+weekly.data <- all.weekly.data[!apply(is.na(all.weekly.data),1,any),]#
+time.weekly.maxima <- time.weekly.maxima[!apply(is.na(all.weekly.data),1,any),]#
+n.weekly <- nrow(weekly.data)#
+#
+distinct.months <- unique(cbind(years.winter,months.winter))#
+n.distinct.months <- nrow(distinct.months)#
+monthly.data.winter <- matrix(nrow=n.distinct.months,ncol=S)#
+time.monthly.maxima <- matrix(nrow=0,ncol=S)#
+for(i in 1:n.distinct.months){#
+	data.month.i <- daily.data.winter[years.winter==distinct.months[i,1] & months.winter==distinct.months[i,2],]#
+	ndays.month.i <- 31*(distinct.months[i,2]%in%c(1,3,5,7,8,10,12)) + 30*(distinct.months[i,2]%in%c(4,6,9,11)) + 28*(distinct.months[i,2]==2)#
+	if(sum(!is.na(data.month.i))/(ndays.month.i*S)<0.95){#
+		monthly.data.winter[i,] <- rep(NA,S)#
+		time.monthly.maxima <- rbind(time.monthly.maxima,rep(NA,S))#
+	} else{#
+		monthly.data.winter[i,] <- apply(data.month.i,2,max,na.rm=TRUE)#
+		time.monthly.maxima <- rbind(time.monthly.maxima,sapply(apply(data.month.i,2,which.max),FUN=function(x){a<-which(years.winter==distinct.months[i,1] & months.winter==distinct.months[i,2]); return(a[x])}))#
+	}#
+}#
+monthly.data <- as.matrix(na.omit(monthly.data.winter))#
+time.monthly.maxima <- time.monthly.maxima[!apply(is.na(monthly.data.winter),1,any),]#
+n.monthly <- nrow(monthly.data)#
+#
+distinct.years <- unique(years.winter)#
+n.distinct.years <- length(distinct.years)#
+yearly.data.winter <- matrix(nrow=n.distinct.years,ncol=S)#
+time.yearly.maxima <- matrix(nrow=0,ncol=S)#
+for(i in 1:n.distinct.years){#
+	data.year.i <- daily.data.winter[years.winter==distinct.years[i],]#
+	ndays.year <- 182#
+	if(sum(!is.na(data.year.i))/(ndays.year*S)<0.95){#
+		yearly.data.winter[i,] <- rep(NA,S)#
+		time.yearly.maxima <- rbind(time.yearly.maxima,rep(NA,S))#
+	} else{#
+		yearly.data.winter[i,] <- apply(data.year.i,2,max,na.rm=TRUE)#
+		time.yearly.maxima <- rbind(time.yearly.maxima,sapply(apply(data.year.i,2,which.max),FUN=function(x){a<-which(years.winter==distinct.years[i]); return(a[x])}))#
+	}#
+}#
+yearly.data <- as.matrix(na.omit(yearly.data.winter))#
+time.yearly.maxima <- time.yearly.maxima[!apply(is.na(yearly.data.winter),1,any),]#
+n.yearly <- nrow(yearly.data)#
+### we don't have so many years available, so we skip yearly data in the following...
+fitGEVs <- function(daily.dat,weekly.dat,monthly.dat,yearly.dat){#
+	S <- ncol(daily.dat)#
+	mles <- matrix(ncol=S,nrow=4)#
+	for(j in 1:S){#
+		daily.dat.j <- daily.dat[,j]#
+		weekly.dat.j <- weekly.dat[,j]#
+		monthly.dat.j <- monthly.dat[,j]#
+		yearly.dat.j <- yearly.dat[,j]#
+		jointGEV.negloglik <- function(par,daily.dat.j,weekly.dat.j,monthly.dat.j,yearly.dat.j){#
+			mu <- par[1]; sig <- par[2]; xi <- par[3]#
+			th <- par[4]#
+			th.weekly <- th*7 ## weekly blocks are of size approx 7#
+			th.monthly <- th*30 ## monthly blocks are of size approx 30#
+			th.yearly <- th*182 ## yearly blocks are of size approx 182 (as only winter data from October to March are considered here)#
+			if(sig > 0 & th.weekly>1 & th.monthly>th.weekly & th.yearly>th.monthly){#
+				loglik.daily <- dgev(daily.dat.j,loc=mu,scale=sig,shape=xi,log=TRUE)#
+				loglik.weekly <- dgev(weekly.dat.j,loc=mu-sig*(1-th.weekly^xi)/xi,scale=sig*th.weekly^xi,shape=xi,log=TRUE)#
+				loglik.monthly <- dgev(monthly.dat.j,loc=mu-sig*(1-th.monthly^xi)/xi,scale=sig*th.monthly^xi,shape=xi,log=TRUE)#
+				loglik.yearly <- dgev(yearly.dat.j,loc=mu-sig*(1-th.yearly^xi)/xi,scale=sig*th.yearly^xi,shape=xi,log=TRUE)#
+				loglik <- sum(loglik.daily)+sum(loglik.weekly)+sum(loglik.monthly)+sum(loglik.yearly)#
+				return(-loglik)#
+			} else{#
+				return(Inf)#
+			}#
+		}#
+		fitGEV <- function(daily.dat.j,weekly.dat.j,monthly.dat.j,yearly.dat.j){#
+			fit0 <- gev.fit(daily.dat.j,show=FALSE)#
+			init <- c(fit0$mle,1)#
+			fit <- optim(par=init,fn=jointGEV.negloglik,daily.dat.j=daily.dat.j,weekly.dat.j=weekly.dat.j,monthly.dat.j=monthly.dat.j,yearly.dat.j=yearly.dat.j,method="Nelder-Mead",control=list(maxit=1000),hessian=FALSE)#
+			return(fit$par)#
+		}#
+		mles[,j] <- fitGEV(daily.dat.j,weekly.dat.j,monthly.dat.j,yearly.dat.j)#
+	}#
+	return(mles)#
+}#
+#
+GEV.mles <- fitGEVs(daily.data,weekly.data,monthly.data,yearly.data)#
+daily.data.Frech <- daily.data#
+weekly.data.Frech <- weekly.data#
+monthly.data.Frech <- monthly.data#
+yearly.data.Frech <- yearly.data#
+#
+for(j in 1:S){#
+	mu <- GEV.mles[1,j]; sig <- GEV.mles[2,j]; xi <- GEV.mles[3,j]#
+	th <- GEV.mles[4,j]#
+	th.weekly <- th*7#
+	th.monthly <- th*30#
+	th.yearly <- th*182#
+	daily.data.Frech[,j] <- -1/log(pgev(daily.data[,j],loc=mu,scale=sig,shape=xi))#
+	weekly.data.Frech[,j] <- -1/log(pgev(weekly.data[,j],loc=mu-sig*(1-th.weekly^xi)/xi,scale=sig*th.weekly^xi,shape=xi))#
+	monthly.data.Frech[,j] <- -1/log(pgev(monthly.data[,j],loc=mu-sig*(1-th.monthly^xi)/xi,scale=sig*th.monthly^xi,shape=xi))#
+	yearly.data.Frech[,j] <- -1/log(pgev(yearly.data[,j],loc=mu-sig*(1-th.yearly^xi)/xi,scale=sig*th.yearly^xi,shape=xi))#
+}#
+### This seems to work reasonably well, but maybe better to have block-specific extreme value indices?...... (see below)#
+### In the end, this simple model is chosen for the paper.
+daily.data.Unif <- exp(-1/daily.data.Frech)#
+weekly.data.Unif <- exp(-1/weekly.data.Frech)#
+monthly.data.Unif <- exp(-1/monthly.data.Frech)#
+yearly.data.Unif <- exp(-1/yearly.data.Frech)
+thetaD.daily <- mean(apply(daily.data.Frech,1,max)^(-1))^(-1)#
+thetaD.weekly <- mean(apply(weekly.data.Frech,1,max)^(-1))^(-1)#
+thetaD.monthly <- mean(apply(monthly.data.Frech,1,max)^(-1))^(-1)#
+thetaD.yearly <- mean(apply(yearly.data.Frech,1,max)^(-1))^(-1)#
+#
+ICthetaD.daily <- thetaD.daily + qnorm(c(0.025,0.975))*thetaD.daily/sqrt(n.daily)#
+ICthetaD.weekly <- thetaD.weekly + qnorm(c(0.025,0.975))*thetaD.weekly/sqrt(n.weekly)#
+ICthetaD.monthly <- thetaD.monthly + qnorm(c(0.025,0.975))*thetaD.monthly/sqrt(n.monthly)#
+ICthetaD.yearly <- thetaD.yearly + qnorm(c(0.025,0.975))*thetaD.yearly/sqrt(n.yearly)#
+#
+theta.z <- function(dataFrech,level.z=NULL,nlevel=1000,xlim=NULL,ylim=NULL,PLOT=TRUE,add=FALSE,sd=TRUE,addLS=TRUE,col="black",colsd="black",polysd=TRUE,...){#
+	S <- ncol(dataFrech)#
+	n <- nrow(dataFrech)#
+	maxFrech <- apply(dataFrech,1,max)#
+	if(is.null(level.z)){#
+		level.z <- seq(min(maxFrech),max(maxFrech),length=nlevel)		#
+	}#
+	if(is.null(xlim)){#
+		xlim <- range(level.z)#
+	}#
+	if(is.null(ylim)){#
+		ylim <- c(1,S)#
+	}#
+	theta.z <- sd.z <- c()	#
+	for(i in 1:length(level.z)){#
+		p.z <- mean(maxFrech<=level.z[i])#
+		theta.z[i] <- min(S,max(1,-level.z[i]*log(p.z)))#
+		sd.z[i] <- level.z[i]*sqrt((1-p.z)/(p.z*n)) ## Delta method...#
+	}#
+	if(is.null(colsd)){#
+		colsd <- col#
+	}#
+	lmfit <- lm(theta.z~log(level.z))#
+	if(PLOT){#
+		if(!add){#
+			plot(level.z,theta.z,type="l",xlab="Unit Fréchet quantile z",ylab=expression("Level-dependent extremal coefficient"~theta[D]*"(z)"),xlim=xlim,ylim=ylim,log="x",col=col,...)#
+			abline(h=c(1,S),col="lightgrey",lty=2)#
+		} else{#
+			lines(level.z,theta.z,col=col,...)#
+		}#
+		if(sd){#
+			if(polysd){#
+				polygon(c(level.z,level.z[length(level.z):1]),c(theta.z-qnorm(0.975)*sd.z,theta.z[length(level.z):1]+qnorm(0.975)*sd.z[length(level.z):1]),col=colsd,border=NA)#
+				lines(level.z,theta.z,col=col,...)#
+			} else{#
+				lines(level.z,theta.z-qnorm(0.975)*sd.z,lty=2,col=colsd,...)#
+				lines(level.z,theta.z+qnorm(0.975)*sd.z,lty=2,col=colsd,...)#
+			}#
+		}#
+		if(addLS){#
+			lines(exp(seq(min(log(level.z))-1,max(log(level.z))+1,length=1000)),lmfit$coef[1]+lmfit$coef[2]*seq(min(log(level.z))-1,max(log(level.z))+1,length=1000),col="red")#
+		}#
+	}#
+	return(list(theta=theta.z,intercept=lmfit$coef[1],slope=lmfit$coef[2]))#
+}#
+#
+nlevel <- 1000#
+level.z <- qfrechet(seq(0.3,0.98,length=nlevel))
+source('~/Documents/Work/05_AssistantProfessor-KAUST/Research/2017_Huser-Opitz-Thibaud__Max-id/Shaheen_Cluster/Max-id/R_Code/Tools.R', chdir = TRUE)
+coord <- winddata$coordmetric
+distmat <- as.matrix(dist(coord))
+Sigma <- exp(-(distmat/357.287)^1.1024)
+fitted.the <- Theta.dimD(level.z[1],Sigma=Sigma,parR=c(0.2443558,2.1130080))
+fitted.the
+fitted.the <- Theta.dimD(level.z[1000],Sigma=Sigma,parR=c(0.2443558,2.1130080))
+fitted.the
+fitted.the <- Theta.dimD(10,Sigma=Sigma,parR=c(0.2443558,2.1130080))
+fitted.the

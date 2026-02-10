@@ -1,0 +1,1084 @@
+gaussint(mu=rep(0,n),Q.chol=Q.chol,a=rep(qnorm(0.99),n),b=rep(Inf,n),n.iter=10^5)$P
+gaussint(mu=rep(0,n),Q.chol=Q.chol,a=rep(qnorm(0.999),n),b=rep(Inf,n),n.iter=10^5)$P
+pmvnorm(lower=c(rep(qnorm(0.99),n)),sigma=cor.mtx)
+###############################
+### LIBRARIES AND SETTINGS ####
+###############################
+rm(list=ls())#
+library(fields)#
+library(mvtnorm)#
+#
+dx <- 500^(-1)#
+x <- seq(0,1,by=dx)#
+n <- length(x)#
+N <- 10^3#
+#
+lambda <- -1/log(0.05) ### lambda is the range parameter. It's chosen so that the effective range based on an exponential correlation function is equal to one (i.e., correlation = 0.05 at distance 1)#
+D <- rdist(x,x)#
+cor.mtx <- exp(-D/lambda)#
+Q.mtx <- solve(cor.mtx)#
+#
+#Q <- sparseMatrix(i=c(1:n,1:(n-1)),j=c(1:n,2:n),x=c(diag(Q.mtx),Q.mtx[n*c(1:(n-1))+(1:(n-1))]),dims=c(n,n),symmetric=TRUE)#
+#Q.chol <- chol(Q)#
+#gaussint(mu=rep(0,n),Q.chol=Q.chol,a=rep(qnorm(0.999),n),b=rep(Inf,n),n.iter=10^5)$P#
+#pmvnorm(lower=c(rep(qnorm(0.99),n)),sigma=cor.mtx)#
+#
+### Could be constructed without computing Q.mtx....... #
+# dx.vec <- diff(x)#
+# d1 <- c(-1/dx.vec,0) #
+# d3 <- c(0,-1/dx.vec) #
+# C <- sparseMatrix(i=c(1:n), j=c(1:n),x=c(dx.vec[1],dx.vec[1:(n-2)]+dx.vec[2:(n-1)],dx.vec[n-1])/2, dims=c(n,n), symmetric=TRUE)#
+# G <- sparseMatrix(i=c(1:n,1:(n-1)), j=c(1:n,2:n),x=c(-d1-d3,-1/dx.vec), dims=c(n,n), symmetric=TRUE)#
+# Q <- G + lambda*C#
+###############################
+### RISK FUNCTIONAL = MEAN ####
+###############################
+betas <- c(0.1,0.05,0.02,0.01,0.005,0.002,0.001) ### marginal exceedance probabilities (defining the threshold)...#
+Dfs <- c(3,5,Inf) # Student t degrees of freedom (Inf<=>Gaussian copula)#
+#
+prob.exc.sum <- array(dim=c(length(x),length(betas),length(Dfs)))#
+#
+for(i in 1:length(x)){#
+	print(i)#
+	for(j in 1:length(betas)){#
+		beta <- betas[j] ## marginal exceedance probability (defining the threshold)#
+		thr <- qnorm(1-beta)#
+#
+		for(k in 1:length(Dfs)){#
+			Df <- Dfs[k]#
+			#p.mean <- 1-pt(qt(pnorm(thr),df=Df)/sqrt(mean(matrix(cor.mtx[1:i,1:i],i,i))),df=Df) ### This is just to compute the exceedance proba of the mean#
+			sigma <- matrix(c(1,mean(cor.mtx[1,1:i])/sqrt(mean(cor.mtx[1:i,1:i])),mean(cor.mtx[1,1:i])/sqrt(mean(cor.mtx[1:i,1:i])),1),2,2)#
+			p.mean <- pmvt(lower=c(qt(pnorm(thr),df=Df)/sqrt(mean(cor.mtx[1:i,1:i])),qt(pnorm(thr),df=Df)),sigma=sigma,df=Df)/beta ### This computes the conditional probability that the mean exceeds the threshold given that the first point exceeds the threshold.#
+			prob.exc.sum[i,j,k] <- p.mean#
+		}#
+	}#
+}
+quartz(width=9,height=4)#
+par(mfrow=c(1,3),mgp=c(2,1,0))#
+#
+plot(x,prob.exc.sum[,1,1],type="l",ylab=expression("P("*integral("Y(s)ds","A")*">u | Y(s"[1]*")>u)"),xlab=expression("Exceedance region size |A|"),main="Student t copula, Df=3",ylim=range(0,1),col="black")#
+abline(h=c(0,1),col="lightgrey")#
+for(j in 2:length(betas)){#
+	lines(x,prob.exc.sum[,j,1],col=j)#
+}#
+#
+plot(x,prob.exc.sum[,1,2],type="l",ylab=expression("P("*integral("Y(s)ds","A")*">u | Y(s"[1]*")>u)"),xlab=expression("Exceedance region size |A|"),main="Student t copula, Df=5",ylim=range(0,1),col="black")#
+abline(h=c(0,1),col="lightgrey")#
+for(j in 2:length(betas)){#
+	lines(x,prob.exc.sum[,j,2],col=j)#
+}#
+#
+plot(x,prob.exc.sum[,1,3],type="l",ylab=expression("P("*integral("Y(s)ds","A")*">u | Y(s"[1]*")>u)"),xlab=expression("Exceedance region size |A|"),main="Gaussian copula",ylim=range(0,1),col="black")#
+abline(h=c(0,1),col="lightgrey")#
+for(j in 2:length(betas)){#
+	lines(x,prob.exc.sum[,j,3],col=j)#
+}#
+#
+legend(x=0.65,y=0.98,legend=betas,col=c(1:length(betas)),lty=1)
+cor.mtx[1,2]
+dx <- 200^(-1)#
+x <- seq(0,1,by=dx)#
+n <- length(x)#
+N <- 10^3#
+#
+lambda <- -1/log(0.05) ### lambda is the range parameter. It's chosen so that the effective range based on an exponential correlation function is equal to one (i.e., correlation = 0.05 at distance 1)#
+D <- rdist(x,x)#
+cor.mtx <- exp(-D/lambda)
+cor.mtx[1,2]
+lambda <- 1
+D <- rdist(x,x)#
+cor.mtx <- exp(-D/lambda)
+cor.mtx[1,2]
+exp(-1/2)
+betas <- c(0.1,0.05,0.02,0.01,0.005,0.002,0.001) ### marginal exceedance probabilities (defining the threshold)...#
+Dfs <- c(3,5,Inf) # Student t degrees of freedom (Inf<=>Gaussian copula)#
+#
+prob.exc.sum <- array(dim=c(length(x),length(betas),length(Dfs)))#
+#
+for(i in 1:length(x)){#
+	print(i)#
+	for(j in 1:length(betas)){#
+		beta <- betas[j] ## marginal exceedance probability (defining the threshold)#
+		thr <- qnorm(1-beta)#
+#
+		for(k in 1:length(Dfs)){#
+			Df <- Dfs[k]#
+			#p.mean <- 1-pt(qt(pnorm(thr),df=Df)/sqrt(mean(matrix(cor.mtx[1:i,1:i],i,i))),df=Df) ### This is just to compute the exceedance proba of the mean#
+			sigma <- matrix(c(1,mean(cor.mtx[1,1:i])/sqrt(mean(cor.mtx[1:i,1:i])),mean(cor.mtx[1,1:i])/sqrt(mean(cor.mtx[1:i,1:i])),1),2,2)#
+			p.mean <- pmvt(lower=c(qt(pnorm(thr),df=Df)/sqrt(mean(cor.mtx[1:i,1:i])),qt(pnorm(thr),df=Df)),sigma=sigma,df=Df)/beta ### This computes the conditional probability that the mean exceeds the threshold given that the first point exceeds the threshold.#
+			prob.exc.sum[i,j,k] <- p.mean#
+		}#
+	}#
+}
+### Plot 1#
+quartz(width=9,height=4)#
+par(mfrow=c(1,3),mgp=c(2,1,0))#
+#
+plot(x,prob.exc.sum[,1,1],type="l",ylab=expression("P("*integral("Y(s)ds","A")*">u | Y(s"[1]*")>u)"),xlab=expression("Exceedance region size |A|"),main="Student t copula, Df=3",ylim=range(0,1),col="black")#
+abline(h=c(0,1),col="lightgrey")#
+for(j in 2:length(betas)){#
+	lines(x,prob.exc.sum[,j,1],col=j)#
+}#
+#
+plot(x,prob.exc.sum[,1,2],type="l",ylab=expression("P("*integral("Y(s)ds","A")*">u | Y(s"[1]*")>u)"),xlab=expression("Exceedance region size |A|"),main="Student t copula, Df=5",ylim=range(0,1),col="black")#
+abline(h=c(0,1),col="lightgrey")#
+for(j in 2:length(betas)){#
+	lines(x,prob.exc.sum[,j,2],col=j)#
+}#
+#
+plot(x,prob.exc.sum[,1,3],type="l",ylab=expression("P("*integral("Y(s)ds","A")*">u | Y(s"[1]*")>u)"),xlab=expression("Exceedance region size |A|"),main="Gaussian copula",ylim=range(0,1),col="black")#
+abline(h=c(0,1),col="lightgrey")#
+for(j in 2:length(betas)){#
+	lines(x,prob.exc.sum[,j,3],col=j)#
+}#
+#
+legend(x=0.65,y=0.98,legend=betas,col=c(1:length(betas)),lty=1)
+betas <- c(0.1,0.05,0.02,0.01,0.005,0.002,0.001,0.0005,0.0002,0.0001) ### marginal exceedance probabilities (defining the threshold)...#
+Dfs <- c(3,5,Inf) # Student t degrees of freedom (Inf<=>Gaussian copula)#
+#
+prob.exc.sum <- array(dim=c(length(x),length(betas),length(Dfs)))#
+#
+for(i in 1:length(x)){#
+	print(i)#
+	for(j in 1:length(betas)){#
+		beta <- betas[j] ## marginal exceedance probability (defining the threshold)#
+		thr <- qnorm(1-beta)#
+#
+		for(k in 1:length(Dfs)){#
+			Df <- Dfs[k]#
+			#p.mean <- 1-pt(qt(pnorm(thr),df=Df)/sqrt(mean(matrix(cor.mtx[1:i,1:i],i,i))),df=Df) ### This is just to compute the exceedance proba of the mean#
+			sigma <- matrix(c(1,mean(cor.mtx[1,1:i])/sqrt(mean(cor.mtx[1:i,1:i])),mean(cor.mtx[1,1:i])/sqrt(mean(cor.mtx[1:i,1:i])),1),2,2)#
+			p.mean <- pmvt(lower=c(qt(pnorm(thr),df=Df)/sqrt(mean(cor.mtx[1:i,1:i])),qt(pnorm(thr),df=Df)),sigma=sigma,df=Df)/beta ### This computes the conditional probability that the mean exceeds the threshold given that the first point exceeds the threshold.#
+			prob.exc.sum[i,j,k] <- p.mean#
+		}#
+	}#
+}
+### Plot 1#
+quartz(width=9,height=4)#
+par(mfrow=c(1,3),mgp=c(2,1,0))#
+#
+plot(x,prob.exc.sum[,1,1],type="l",ylab=expression("P("*integral("Y(s)ds","A")*">u | Y(s"[1]*")>u)"),xlab=expression("Exceedance region size |A|"),main="Student t copula, Df=3",ylim=range(0,1),col="black")#
+abline(h=c(0,1),col="lightgrey")#
+for(j in 2:length(betas)){#
+	lines(x,prob.exc.sum[,j,1],col=j)#
+}#
+#
+plot(x,prob.exc.sum[,1,2],type="l",ylab=expression("P("*integral("Y(s)ds","A")*">u | Y(s"[1]*")>u)"),xlab=expression("Exceedance region size |A|"),main="Student t copula, Df=5",ylim=range(0,1),col="black")#
+abline(h=c(0,1),col="lightgrey")#
+for(j in 2:length(betas)){#
+	lines(x,prob.exc.sum[,j,2],col=j)#
+}#
+#
+plot(x,prob.exc.sum[,1,3],type="l",ylab=expression("P("*integral("Y(s)ds","A")*">u | Y(s"[1]*")>u)"),xlab=expression("Exceedance region size |A|"),main="Gaussian copula",ylim=range(0,1),col="black")#
+abline(h=c(0,1),col="lightgrey")#
+for(j in 2:length(betas)){#
+	lines(x,prob.exc.sum[,j,3],col=j)#
+}#
+#
+legend(x=0.65,y=0.98,legend=betas,col=c(1:length(betas)),lty=1)
+betas <- c(0.1,0.01,0.001,0.0001,0.00001) ### marginal exceedance probabilities (defining the threshold)...#
+Dfs <- c(3,5,Inf) # Student t degrees of freedom (Inf<=>Gaussian copula)#
+#
+prob.exc.sum <- array(dim=c(length(x),length(betas),length(Dfs)))#
+#
+for(i in 1:length(x)){#
+	print(i)#
+	for(j in 1:length(betas)){#
+		beta <- betas[j] ## marginal exceedance probability (defining the threshold)#
+		thr <- qnorm(1-beta)#
+#
+		for(k in 1:length(Dfs)){#
+			Df <- Dfs[k]#
+			#p.mean <- 1-pt(qt(pnorm(thr),df=Df)/sqrt(mean(matrix(cor.mtx[1:i,1:i],i,i))),df=Df) ### This is just to compute the exceedance proba of the mean#
+			sigma <- matrix(c(1,mean(cor.mtx[1,1:i])/sqrt(mean(cor.mtx[1:i,1:i])),mean(cor.mtx[1,1:i])/sqrt(mean(cor.mtx[1:i,1:i])),1),2,2)#
+			p.mean <- pmvt(lower=c(qt(pnorm(thr),df=Df)/sqrt(mean(cor.mtx[1:i,1:i])),qt(pnorm(thr),df=Df)),sigma=sigma,df=Df)/beta ### This computes the conditional probability that the mean exceeds the threshold given that the first point exceeds the threshold.#
+			prob.exc.sum[i,j,k] <- p.mean#
+		}#
+	}#
+}
+quartz(width=9,height=4)#
+par(mfrow=c(1,3),mgp=c(2,1,0))#
+#
+plot(x,prob.exc.sum[,1,1],type="l",ylab=expression("P("*integral("Y(s)ds","A")*">u | Y(s"[1]*")>u)"),xlab=expression("Exceedance region size |A|"),main="Student t copula, Df=3",ylim=range(0,1),col="black")#
+abline(h=c(0,1),col="lightgrey")#
+for(j in 2:length(betas)){#
+	lines(x,prob.exc.sum[,j,1],col=j)#
+}#
+#
+plot(x,prob.exc.sum[,1,2],type="l",ylab=expression("P("*integral("Y(s)ds","A")*">u | Y(s"[1]*")>u)"),xlab=expression("Exceedance region size |A|"),main="Student t copula, Df=5",ylim=range(0,1),col="black")#
+abline(h=c(0,1),col="lightgrey")#
+for(j in 2:length(betas)){#
+	lines(x,prob.exc.sum[,j,2],col=j)#
+}#
+#
+plot(x,prob.exc.sum[,1,3],type="l",ylab=expression("P("*integral("Y(s)ds","A")*">u | Y(s"[1]*")>u)"),xlab=expression("Exceedance region size |A|"),main="Gaussian copula",ylim=range(0,1),col="black")#
+abline(h=c(0,1),col="lightgrey")#
+for(j in 2:length(betas)){#
+	lines(x,prob.exc.sum[,j,3],col=j)#
+}#
+#
+legend(x=0.65,y=0.98,legend=betas,col=c(1:length(betas)),lty=1)
+quartz(width=6,height=6)#
+alpha <- 1/3 ### Conditional exceedance probability of mean, given an exceedance at one location#
+#
+D.opt <- matrix(nrow=length(betas),ncol=length(Dfs))#
+for(j in 1:length(betas)){#
+	for(k in 1:length(Dfs)){#
+		D.opt[j,k] <- which.min(abs(prob.exc.sum[,j,k]-alpha))*dx#
+	}#
+}#
+#
+plot(-log(betas),D.opt[,1],type="l",ylim=c(0,1),xlab="Marginal exceedance probability",ylab="Size of hot spot, i.e., length of interval |D|",main="",xaxt="n",col=1)#
+axis(1,at=-log(betas),labels=betas)#
+lines(-log(betas),D.opt[,2],col=2)#
+lines(-log(betas),D.opt[,3],col=3)#
+legend(x="topright",legend=c("Student, Df=3","Student, Df=5","Gaussian"),col=c(1:3),lty=1)
+quartz(width=6,height=6)#
+alpha <- 0.6 ### Conditional exceedance probability of mean, given an exceedance at one location#
+#
+D.opt <- matrix(nrow=length(betas),ncol=length(Dfs))#
+for(j in 1:length(betas)){#
+	for(k in 1:length(Dfs)){#
+		D.opt[j,k] <- which.min(abs(prob.exc.sum[,j,k]-alpha))*dx#
+	}#
+}#
+#
+plot(-log(betas),D.opt[,1],type="l",ylim=c(0,1),xlab="Marginal exceedance probability",ylab="Size of hot spot, i.e., length of interval |D|",main="",xaxt="n",col=1)#
+axis(1,at=-log(betas),labels=betas)#
+lines(-log(betas),D.opt[,2],col=2)#
+lines(-log(betas),D.opt[,3],col=3)#
+legend(x="topright",legend=c("Student, Df=3","Student, Df=5","Gaussian"),col=c(1:3),lty=1)
+plot(-log(betas),D.opt[,1],type="l",ylim=c(0,1),xlab="Marginal exceedance probability",ylab="Size of hot spot, i.e., length of interval |D|",main="",xaxt="n",col=1)#
+axis(1,at=-log(betas),labels=betas)#
+lines(-log(betas),D.opt[,2],col=2)#
+lines(-log(betas),D.opt[,3],col=3)#
+abline(h=0,col="lightgrey")#
+legend(x="topright",legend=c("Student, Df=3","Student, Df=5","Gaussian"),col=c(1:3),lty=1)
+betas <- c(0.1,0.01,0.001,0.0001) ### marginal exceedance probabilities (defining the threshold)...#
+Dfs <- c(3,5,Inf) # Student t degrees of freedom (Inf<=>Gaussian copula)#
+#
+prob.exc.min <- array(dim=c(length(x),length(betas),length(Dfs)))#
+i.seq <- c(1:length(x))#
+#i.seq <- c(1:length(x))[c(0:49)*(floor(length(x)/50))+1]	#
+#prob.exc.min.sub <- array(dim=c(length(i.seq),length(betas),length(Dfs)))#
+for(j in 1:length(betas)){#
+	beta <- betas[j] ## marginal exceedance probability (defining the threshold)#
+	thr <- qnorm(1-beta)#
+#
+	for(k in 1:length(Dfs)){#
+		Df <- Dfs[k]#
+		print(paste("beta=",beta,"; Df=",Df,sep=""))#
+		p.min.sub <- c()#
+		for(i in 1:length(i.seq)){#
+			if(i%%floor(length(i.seq)/10)==0){#
+				print(paste(" ",floor(100*i/length(i.seq)),"%",sep=""))#
+			}#
+			set.seed(1980734027)#
+			#p.min.sub[i] <- pmvt(lower=qt(pnorm(rep(thr,i.seq[i])),df=Df),sigma=matrix(cor.mtx[1:i.seq[i],1:i.seq[i]],i.seq[i],i.seq[i]),df=Df)#
+			#prob.exc.min.sub[i,j,k] <- p.min.sub[i]#
+			p.min[i] <- pmvt(lower=qt(pnorm(rep(thr,i.seq[i])),df=Df),sigma=matrix(cor.mtx[1:i.seq[i],1:i.seq[i]],i.seq[i],i.seq[i]),df=Df)#
+			prob.exc.min[i,j,k] <- p.min[i]#
+		}#
+		#covar.x <- data.frame(x1=x,x2=x^2,x3=x^3,x4=x^4,x5=x^5)#
+		#covar.x.sub <- data.frame(x1=x[i.seq],x2=x[i.seq]^2,x3=x[i.seq]^3,x4=x[i.seq]^4,x5=x[i.seq]^5)#
+		#p.min <- predict(lm(p.min.sub~.,data=covar.x.sub),newdata=covar.x)#
+		#p.min <- predict(smooth.spline(x=x[i.seq],y=p.min.sub,df=3),x=x)$y#
+		#p.min <- predict(loess(p.min.sub~.,data=data.frame(x=x[i.seq])),newdata=data.frame(x=x)) #
+		#p.min <- as.vector(kriging(data=p.min.sub,data.coord=x[i.seq],krig.coord=x,cov.mod="whitmat",sill=1,range=0.2,smooth=0.6)$krig.est)#
+		#prob.exc.min[,j,k] <- p.min#
+	}#
+}
+betas <- c(0.1,0.01,0.001,0.0001) ### marginal exceedance probabilities (defining the threshold)...#
+Dfs <- c(3,5,Inf) # Student t degrees of freedom (Inf<=>Gaussian copula)#
+#
+prob.exc.min <- array(dim=c(length(x),length(betas),length(Dfs)))#
+i.seq <- c(1:length(x))#
+#i.seq <- c(1:length(x))[c(0:49)*(floor(length(x)/50))+1]	#
+#prob.exc.min.sub <- array(dim=c(length(i.seq),length(betas),length(Dfs)))#
+for(j in 1:length(betas)){#
+	beta <- betas[j] ## marginal exceedance probability (defining the threshold)#
+	thr <- qnorm(1-beta)#
+#
+	for(k in 1:length(Dfs)){#
+		Df <- Dfs[k]#
+		print(paste("beta=",beta,"; Df=",Df,sep=""))#
+		#p.min.sub <- c()#
+		p.min <- c()#
+		for(i in 1:length(i.seq)){#
+			if(i%%floor(length(i.seq)/10)==0){#
+				print(paste(" ",floor(100*i/length(i.seq)),"%",sep=""))#
+			}#
+			set.seed(1980734027)#
+			#p.min.sub[i] <- pmvt(lower=qt(pnorm(rep(thr,i.seq[i])),df=Df),sigma=matrix(cor.mtx[1:i.seq[i],1:i.seq[i]],i.seq[i],i.seq[i]),df=Df)#
+			#prob.exc.min.sub[i,j,k] <- p.min.sub[i]#
+			p.min[i] <- pmvt(lower=qt(pnorm(rep(thr,i.seq[i])),df=Df),sigma=matrix(cor.mtx[1:i.seq[i],1:i.seq[i]],i.seq[i],i.seq[i]),df=Df)#
+			prob.exc.min[i,j,k] <- p.min[i]#
+		}#
+		#covar.x <- data.frame(x1=x,x2=x^2,x3=x^3,x4=x^4,x5=x^5)#
+		#covar.x.sub <- data.frame(x1=x[i.seq],x2=x[i.seq]^2,x3=x[i.seq]^3,x4=x[i.seq]^4,x5=x[i.seq]^5)#
+		#p.min <- predict(lm(p.min.sub~.,data=covar.x.sub),newdata=covar.x)#
+		#p.min <- predict(smooth.spline(x=x[i.seq],y=p.min.sub,df=3),x=x)$y#
+		#p.min <- predict(loess(p.min.sub~.,data=data.frame(x=x[i.seq])),newdata=data.frame(x=x)) #
+		#p.min <- as.vector(kriging(data=p.min.sub,data.coord=x[i.seq],krig.coord=x,cov.mod="whitmat",sill=1,range=0.2,smooth=0.6)$krig.est)#
+		#prob.exc.min[,j,k] <- p.min#
+	}#
+}
+quartz(width=9,height=4)#
+par(mfrow=c(1,3))#
+#
+plot(x,prob.exc.min[,1,1]/betas[1],type="l",ylab=expression("P(Min"["s in D"]*"Y(s)>u | Y(s"[0]*")>u)"),xlab=expression("Interval length |D|"),main="Student t copula, Df=3",ylim=range(0,1),col="black")#
+abline(h=c(0,1),col="lightgrey")#
+for(j in 2:length(betas)){#
+	lines(x,prob.exc.min[,j,1]/betas[j],col=j)#
+}#
+#
+plot(x,prob.exc.min[,1,2]/betas[1],type="l",ylab=expression("P(Min"["s in D"]*"Y(s)>u | Y(s"[0]*")>u)"),xlab=expression("Interval length |D|"),main="Student t copula, Df=5",ylim=range(0,1),col="black")#
+abline(h=c(0,1),col="lightgrey")#
+for(j in 2:length(betas)){#
+	lines(x,prob.exc.min[,j,2]/betas[j],col=j)#
+}#
+#
+plot(x,prob.exc.min[,1,3]/betas[1],type="l",ylab=expression("P(Min"["s in D"]*"Y(s)>u | Y(s"[0]*")>u)"),xlab=expression("Interval length |D|"),main="Gaussian copula",ylim=range(0,1),col="black")#
+abline(h=c(0,1),col="lightgrey")#
+for(j in 2:length(betas)){#
+	lines(x,prob.exc.min[,j,3]/betas[j],col=j)#
+}#
+#
+legend(x=0.65,y=0.98,legend=betas,col=c(1:length(betas)),lty=1)
+?pmvt
+prob.exc.min.sub <- prob.exc.min
+prob.exc.min.sub <- prob.exc.min#
+for(j in 1:length(betas)){#
+	beta <- betas[j] ## marginal exceedance probability (defining the threshold)#
+	thr <- qnorm(1-beta)#
+#
+	for(k in 1:length(Dfs)){#
+		prob.exc.min[,j,k] <- predict(smooth.spline(x=x,y=prob.exc.min.sub[,j,k]))$y#
+	}#
+}
+### Plot 1#
+quartz(width=9,height=4)#
+par(mfrow=c(1,3))#
+#
+plot(x,prob.exc.min[,1,1]/betas[1],type="l",ylab=expression("P(min"["s in D"]*"Y(s)>u | Y(s"[0]*")>u)"),xlab=expression("Interval length |D|"),main="Student t copula, Df=3",ylim=range(0,1),col="black")#
+abline(h=c(0,1),col="lightgrey")#
+for(j in 2:length(betas)){#
+	lines(x,prob.exc.min[,j,1]/betas[j],col=j)#
+}#
+#
+plot(x,prob.exc.min[,1,2]/betas[1],type="l",ylab=expression("P(min"["s in D"]*"Y(s)>u | Y(s"[0]*")>u)"),xlab=expression("Interval length |D|"),main="Student t copula, Df=5",ylim=range(0,1),col="black")#
+abline(h=c(0,1),col="lightgrey")#
+for(j in 2:length(betas)){#
+	lines(x,prob.exc.min[,j,2]/betas[j],col=j)#
+}#
+#
+plot(x,prob.exc.min[,1,3]/betas[1],type="l",ylab=expression("P(min"["s in D"]*"Y(s)>u | Y(s"[0]*")>u)"),xlab=expression("Interval length |D|"),main="Gaussian copula",ylim=range(0,1),col="black")#
+abline(h=c(0,1),col="lightgrey")#
+for(j in 2:length(betas)){#
+	lines(x,prob.exc.min[,j,3]/betas[j],col=j)#
+}#
+#
+legend(x=0.65,y=0.98,legend=betas,col=c(1:length(betas)),lty=1)
+?pmvt
+###############################
+### LIBRARIES AND SETTINGS ####
+###############################
+rm(list=ls())#
+library(fields)#
+library(mvtnorm)#
+#
+dx <- 200^(-1)#
+x <- seq(0,1,by=dx)#
+n <- length(x)#
+N <- 10^3#
+#
+#lambda <- -1/log(0.05) ### lambda is the range parameter. It's chosen so that the effective range based on an exponential correlation function is equal to one (i.e., correlation = 0.05 at distance 1)#
+lambda <- 1#
+D <- rdist(x,x)#
+cor.mtx <- exp(-D/lambda)#
+#Q.mtx <- solve(cor.mtx)#
+#
+#Q <- sparseMatrix(i=c(1:n,1:(n-1)),j=c(1:n,2:n),x=c(diag(Q.mtx),Q.mtx[n*c(1:(n-1))+(1:(n-1))]),dims=c(n,n),symmetric=TRUE)#
+#Q.chol <- chol(Q)#
+#gaussint(mu=rep(0,n),Q.chol=Q.chol,a=rep(qnorm(0.999),n),b=rep(Inf,n),n.iter=10^5)$P#
+#pmvnorm(lower=c(rep(qnorm(0.99),n)),sigma=cor.mtx)#
+#
+### Could be constructed without computing Q.mtx....... #
+# dx.vec <- diff(x)#
+# d1 <- c(-1/dx.vec,0) #
+# d3 <- c(0,-1/dx.vec) #
+# C <- sparseMatrix(i=c(1:n), j=c(1:n),x=c(dx.vec[1],dx.vec[1:(n-2)]+dx.vec[2:(n-1)],dx.vec[n-1])/2, dims=c(n,n), symmetric=TRUE)#
+# G <- sparseMatrix(i=c(1:n,1:(n-1)), j=c(1:n,2:n),x=c(-d1-d3,-1/dx.vec), dims=c(n,n), symmetric=TRUE)#
+# Q <- G + lambda*C
+###############################
+### RISK FUNCTIONAL = MEAN ####
+###############################
+betas <- c(0.1,0.01,0.001,0.0001,0.00001) ### marginal exceedance probabilities (defining the threshold)...#
+Dfs <- c(3,5,Inf) # Student t degrees of freedom (Inf<=>Gaussian copula)#
+#
+prob.exc.sum <- array(dim=c(length(x),length(betas),length(Dfs)))#
+#
+for(i in 1:length(x)){#
+	print(i)#
+	for(j in 1:length(betas)){#
+		beta <- betas[j] ## marginal exceedance probability (defining the threshold)#
+		thr <- qnorm(1-beta)#
+#
+		for(k in 1:length(Dfs)){#
+			Df <- Dfs[k]#
+			#p.mean <- 1-pt(qt(pnorm(thr),df=Df)/sqrt(mean(matrix(cor.mtx[1:i,1:i],i,i))),df=Df) ### This is just to compute the exceedance proba of the mean#
+			sigma <- matrix(c(1,mean(cor.mtx[1,1:i])/sqrt(mean(cor.mtx[1:i,1:i])),mean(cor.mtx[1,1:i])/sqrt(mean(cor.mtx[1:i,1:i])),1),2,2)#
+			p.mean <- pmvt(lower=c(qt(pnorm(thr),df=Df)/sqrt(mean(cor.mtx[1:i,1:i])),qt(pnorm(thr),df=Df)),sigma=sigma,df=Df)/beta ### This computes the conditional probability that the mean exceeds the threshold given that the first point exceeds the threshold.#
+			prob.exc.sum[i,j,k] <- p.mean#
+		}#
+	}#
+}
+### Plot 1#
+quartz(width=9,height=4)#
+par(mfrow=c(1,3),mgp=c(2,1,0))#
+#
+plot(x,prob.exc.sum[,1,1],type="l",ylab=expression("P("*integral("Y(s)ds","A")*">u | Y(s"[1]*")>u)"),xlab=expression("Exceedance region size |A|"),main="Student t copula, Df=3",ylim=range(0,1),col="black")#
+abline(h=c(0,1),col="lightgrey")#
+for(j in 2:length(betas)){#
+	lines(x,prob.exc.sum[,j,1],col=j)#
+}#
+#
+plot(x,prob.exc.sum[,1,2],type="l",ylab=expression("P("*integral("Y(s)ds","A")*">u | Y(s"[1]*")>u)"),xlab=expression("Exceedance region size |A|"),main="Student t copula, Df=5",ylim=range(0,1),col="black")#
+abline(h=c(0,1),col="lightgrey")#
+for(j in 2:length(betas)){#
+	lines(x,prob.exc.sum[,j,2],col=j)#
+}#
+#
+plot(x,prob.exc.sum[,1,3],type="l",ylab=expression("P("*integral("Y(s)ds","A")*">u | Y(s"[1]*")>u)"),xlab=expression("Exceedance region size |A|"),main="Gaussian copula",ylim=range(0,1),col="black")#
+abline(h=c(0,1),col="lightgrey")#
+for(j in 2:length(betas)){#
+	lines(x,prob.exc.sum[,j,3],col=j)#
+}#
+#
+legend(x=0.65,y=0.98,legend=betas,col=c(1:length(betas)),lty=1)
+###############################
+### RISK FUNCTIONAL = MEAN ####
+###############################
+betas <- c(0.01,0.001,0.0001,0.00001) ### marginal exceedance probabilities (defining the threshold)...#
+Dfs <- c(3,5,Inf) # Student t degrees of freedom (Inf<=>Gaussian copula)#
+#
+prob.exc.sum <- array(dim=c(length(x),length(betas),length(Dfs)))#
+#
+for(i in 1:length(x)){#
+	print(i)#
+	for(j in 1:length(betas)){#
+		beta <- betas[j] ## marginal exceedance probability (defining the threshold)#
+		thr <- qnorm(1-beta)#
+#
+		for(k in 1:length(Dfs)){#
+			Df <- Dfs[k]#
+			#p.mean <- 1-pt(qt(pnorm(thr),df=Df)/sqrt(mean(matrix(cor.mtx[1:i,1:i],i,i))),df=Df) ### This is just to compute the exceedance proba of the mean#
+			sigma <- matrix(c(1,mean(cor.mtx[1,1:i])/sqrt(mean(cor.mtx[1:i,1:i])),mean(cor.mtx[1,1:i])/sqrt(mean(cor.mtx[1:i,1:i])),1),2,2)#
+			p.mean <- pmvt(lower=c(qt(pnorm(thr),df=Df)/sqrt(mean(cor.mtx[1:i,1:i])),qt(pnorm(thr),df=Df)),sigma=sigma,df=Df)/beta ### This computes the conditional probability that the mean exceeds the threshold given that the first point exceeds the threshold.#
+			prob.exc.sum[i,j,k] <- p.mean#
+		}#
+	}#
+}#
+#
+save(prob.exc.sum,file="~/Desktop/CRG_Examples/prob_exc_sum.RData")#
+load(file="~/Desktop/CRG_Examples/prob_exc_sum.RData")#
+#
+### Plot 1#
+quartz(width=9,height=4)#
+par(mfrow=c(1,3),mgp=c(2,1,0))#
+#
+plot(x,prob.exc.sum[,1,1],type="l",ylab=expression("P("*integral("Y(s)ds","A")*">u | Y(s"[1]*")>u)"),xlab=expression("Exceedance region size |A|"),main="Student t copula, Df=3",ylim=range(0,1),col="black")#
+abline(h=c(0,1),col="lightgrey")#
+for(j in 2:length(betas)){#
+	lines(x,prob.exc.sum[,j,1],col=j)#
+}#
+#
+plot(x,prob.exc.sum[,1,2],type="l",ylab=expression("P("*integral("Y(s)ds","A")*">u | Y(s"[1]*")>u)"),xlab=expression("Exceedance region size |A|"),main="Student t copula, Df=5",ylim=range(0,1),col="black")#
+abline(h=c(0,1),col="lightgrey")#
+for(j in 2:length(betas)){#
+	lines(x,prob.exc.sum[,j,2],col=j)#
+}#
+#
+plot(x,prob.exc.sum[,1,3],type="l",ylab=expression("P("*integral("Y(s)ds","A")*">u | Y(s"[1]*")>u)"),xlab=expression("Exceedance region size |A|"),main="Gaussian copula",ylim=range(0,1),col="black")#
+abline(h=c(0,1),col="lightgrey")#
+for(j in 2:length(betas)){#
+	lines(x,prob.exc.sum[,j,3],col=j)#
+}#
+#
+legend(x=0.65,y=0.98,legend=betas,col=c(1:length(betas)),lty=1)
+### Plot 2#
+quartz(width=6,height=6)#
+alpha <- 0.6 ### Conditional exceedance probability of mean, given an exceedance at one location#
+#
+D.opt <- matrix(nrow=length(betas),ncol=length(Dfs))#
+for(j in 1:length(betas)){#
+	for(k in 1:length(Dfs)){#
+		D.opt[j,k] <- which.min(abs(prob.exc.sum[,j,k]-alpha))*dx#
+	}#
+}#
+#
+plot(-log(betas),D.opt[,1],type="l",ylim=c(0,1),xlab="Marginal exceedance probability",ylab="Size of hot spot, i.e., length of interval |D|",main="",xaxt="n",col=1)#
+axis(1,at=-log(betas),labels=betas)#
+lines(-log(betas),D.opt[,2],col=2)#
+lines(-log(betas),D.opt[,3],col=3)#
+abline(h=0,col="lightgrey")#
+legend(x="topright",legend=c("Student, Df=3","Student, Df=5","Gaussian"),col=c(1:3),lty=1)
+quartz(width=6,height=6)#
+alpha <- 0.5 ### Conditional exceedance probability of mean, given an exceedance at one location#
+#
+D.opt <- matrix(nrow=length(betas),ncol=length(Dfs))#
+for(j in 1:length(betas)){#
+	for(k in 1:length(Dfs)){#
+		D.opt[j,k] <- which.min(abs(prob.exc.sum[,j,k]-alpha))*dx#
+	}#
+}#
+#
+plot(-log(betas),D.opt[,1],type="l",ylim=c(0,1),xlab="Marginal exceedance probability",ylab="Size of hot spot, i.e., length of interval |D|",main="",xaxt="n",col=1)#
+axis(1,at=-log(betas),labels=betas)#
+lines(-log(betas),D.opt[,2],col=2)#
+lines(-log(betas),D.opt[,3],col=3)#
+abline(h=0,col="lightgrey")#
+legend(x="topright",legend=c("Student, Df=3","Student, Df=5","Gaussian"),col=c(1:3),lty=1)
+quartz(width=9,height=4)#
+par(mfrow=c(1,3),mgp=c(2,1,0))#
+#
+plot(x,prob.exc.sum[,1,1],type="l",ylab=expression("P("*integral("Y(s)ds","A")*">u | Y(s"[1]*")>u)"),xlab=expression("Exceedance region size |A|"),main="Student t copula, Df=3",ylim=range(0,1),col="black")#
+abline(h=c(0,1),col="lightgrey")#
+for(j in 2:length(betas)){#
+	lines(x,prob.exc.sum[,j,1],col=j)#
+}#
+#
+plot(x,prob.exc.sum[,1,2],type="l",ylab=expression("P("*integral("Y(s)ds","A")*">u | Y(s"[1]*")>u)"),xlab=expression("Exceedance region size |A|"),main="Student t copula, Df=5",ylim=range(0,1),col="black")#
+abline(h=c(0,1),col="lightgrey")#
+for(j in 2:length(betas)){#
+	lines(x,prob.exc.sum[,j,2],col=j)#
+}#
+#
+plot(x,prob.exc.sum[,1,3],type="l",ylab=expression("P("*integral("Y(s)ds","A")*">u | Y(s"[1]*")>u)"),xlab=expression("Exceedance region size |A|"),main="Gaussian copula",ylim=range(0,1),col="black")#
+abline(h=c(0,1),col="lightgrey")#
+for(j in 2:length(betas)){#
+	lines(x,prob.exc.sum[,j,3],col=j)#
+}#
+#
+legend(x=0.65,y=0.98,legend=betas,col=c(1:length(betas)),lty=1)
+### Plot 2#
+quartz(width=6,height=6)#
+alpha <- 0.5 ### Conditional exceedance probability of mean, given an exceedance at one location#
+#
+D.opt <- matrix(nrow=length(betas),ncol=length(Dfs))#
+for(j in 1:length(betas)){#
+	for(k in 1:length(Dfs)){#
+		D.opt[j,k] <- which.min(abs(prob.exc.sum[,j,k]-alpha))*dx#
+	}#
+}#
+#
+plot(-log(betas),D.opt[,1],type="l",ylim=c(0,1),xlab="Marginal exceedance probability",ylab="Size of hot spot, i.e., length of interval |D|",main="",xaxt="n",col=1)#
+axis(1,at=-log(betas),labels=betas)#
+lines(-log(betas),D.opt[,2],col=2)#
+lines(-log(betas),D.opt[,3],col=3)#
+abline(h=0,col="lightgrey")#
+legend(x="topright",legend=c("Student, Df=3","Student, Df=5","Gaussian"),col=c(1:3),lty=1)
+D.opt <- matrix(nrow=length(betas),ncol=length(Dfs))#
+for(j in 1:length(betas)){#
+	for(k in 1:length(Dfs)){#
+		D.opt[j,k] <- which.min(abs(prob.exc.sum[,j,k]-alpha))*dx#
+	}#
+}#
+#
+plot(-log(betas),D.opt[,1],type="b",ylim=c(0,1),xlab="Marginal exceedance probability",ylab="Size of hot spot, i.e., length of interval |D|",main="",xaxt="n",col=1)#
+axis(1,at=-log(betas),labels=betas)#
+lines(-log(betas),D.opt[,2],col=2,lty="b")#
+lines(-log(betas),D.opt[,3],col=3,lty="b")#
+abline(h=0,col="lightgrey")#
+legend(x="topright",legend=c("Student, Df=3","Student, Df=5","Gaussian"),col=c(1:3),lty="b")
+plot(-log(betas),D.opt[,1],type="b",ylim=c(0,1),xlab="Marginal exceedance probability",ylab="Size of hot spot, i.e., length of interval |D|",main="",xaxt="n",col=1)#
+axis(1,at=-log(betas),labels=betas)#
+points(-log(betas),D.opt[,2],col=2,lty="b")#
+points(-log(betas),D.opt[,3],col=3,lty="b")#
+abline(h=0,col="lightgrey")
+?points
+?par
+plot(-log(betas),D.opt[,1],type="b",ylim=c(0,1),xlab="Marginal exceedance probability",ylab="Size of hot spot, i.e., length of interval |D|",main="",xaxt="n",col=1)#
+axis(1,at=-log(betas),labels=betas)#
+points(-log(betas),D.opt[,2],col=2,type="b")
+points(-log(betas),D.opt[,3],col=3,type="b")
+legend(x="topright",legend=c("Student, Df=3","Student, Df=5","Gaussian"),col=c(1:3),type="b")
+plot(-log(betas),D.opt[,1],type="b",ylim=c(0,1),xlab="Marginal exceedance probability",ylab="Size of hot spot, i.e., length of interval |D|",main="",xaxt="n",col=1)#
+axis(1,at=-log(betas),labels=betas)#
+points(-log(betas),D.opt[,2],col=2,type="b")#
+points(-log(betas),D.opt[,3],col=3,type="b")#
+abline(h=0,col="lightgrey")#
+legend(x="topright",legend=c("Student, Df=3","Student, Df=5","Gaussian"),col=c(1:3),lty="l")
+?legend
+plot(-log(betas),D.opt[,1],type="b",ylim=c(0,1),xlab="Marginal exceedance probability",ylab="Size of hot spot, i.e., length of interval |D|",main="",xaxt="n",col=1)#
+axis(1,at=-log(betas),labels=betas)#
+points(-log(betas),D.opt[,2],col=2,type="b")#
+points(-log(betas),D.opt[,3],col=3,type="b")#
+abline(h=0,col="lightgrey")#
+legend(x="topright",legend=c("Student, Df=3","Student, Df=5","Gaussian"),col=c(1:3),lty=1)
+H <- array(rnorm(10*3*5,20),dim=c(10,3,5,20))
+dim(apply(H,c(1,2,3),mean))
+dim(apply(H,c(1,3,4),mean))
+##################################
+### RISK FUNCTIONAL = MINIMUM ### #
+##################################
+betas <- c(0.1,0.01,0.001,0.0001) ### marginal exceedance probabilities (defining the threshold)...#
+Dfs <- c(3,5,Inf) # Student t degrees of freedom (Inf<=>Gaussian copula)#
+rep <- 10#
+#
+prob.exc.min <- array(dim=c(length(x),length(betas),length(Dfs),rep))#
+i.seq <- c(1:length(x))#
+#i.seq <- c(1:length(x))[c(0:49)*(floor(length(x)/50))+1]	#
+prob.exc.min.sub <- array(dim=c(length(i.seq),length(betas),length(Dfs),rep))#
+for(j in 1:length(betas)){#
+	beta <- betas[j] ## marginal exceedance probability (defining the threshold)#
+	thr <- qnorm(1-beta)#
+#
+	for(k in 1:length(Dfs)){#
+		Df <- Dfs[k]#
+		print(paste("beta=",beta,"; Df=",Df,sep=""))#
+		for(i in 1:length(i.seq)){#
+			if(i%%floor(length(i.seq)/10)==0){#
+				print(paste(" ",floor(100*i/length(i.seq)),"%",sep=""))#
+			}#
+			for(r in 1:rep){#
+				set.seed(1980734027+3457*r)#
+				p.min.sub <- pmvt(lower=qt(pnorm(rep(thr,i.seq[i])),df=Df),sigma=matrix(cor.mtx[1:i.seq[i],1:i.seq[i]],i.seq[i],i.seq[i]),df=Df)#
+				prob.exc.min.sub[i,j,k,r] <- p.min.sub#
+			}#
+		}#
+		#covar.x <- data.frame(x1=x,x2=x^2,x3=x^3,x4=x^4,x5=x^5)#
+		#covar.x.sub <- data.frame(x1=x[i.seq],x2=x[i.seq]^2,x3=x[i.seq]^3,x4=x[i.seq]^4,x5=x[i.seq]^5)#
+		#p.min <- predict(lm(p.min.sub~.,data=covar.x.sub),newdata=covar.x)#
+		p.min <- predict(smooth.spline(x=x[i.seq],y=apply(prob.exc.min.sub,c(1,2,3),mean)[,j,k],df=3),x=x)$y#
+		#p.min <- predict(loess(p.min.sub~.,data=data.frame(x=x[i.seq])),newdata=data.frame(x=x)) #
+		#p.min <- as.vector(kriging(data=p.min.sub,data.coord=x[i.seq],krig.coord=x,cov.mod="whitmat",sill=1,range=0.2,smooth=0.6)$krig.est)#
+		prob.exc.min[,j,k] <- p.min#
+	}#
+}
+##################################
+### RISK FUNCTIONAL = MINIMUM ### #
+##################################
+betas <- c(0.01,0.001,0.0001) ### marginal exceedance probabilities (defining the threshold)...#
+Dfs <- c(3,5,Inf) # Student t degrees of freedom (Inf<=>Gaussian copula)#
+rep <- 10#
+#
+prob.exc.min <- array(dim=c(length(x),length(betas),length(Dfs),rep))#
+i.seq <- c(1:length(x))#
+#i.seq <- c(1:length(x))[c(0:49)*(floor(length(x)/50))+1]	#
+prob.exc.min.sub <- array(dim=c(length(i.seq),length(betas),length(Dfs),rep))#
+for(j in 1:length(betas)){#
+	beta <- betas[j] ## marginal exceedance probability (defining the threshold)#
+	thr <- qnorm(1-beta)#
+#
+	for(k in 1:length(Dfs)){#
+		Df <- Dfs[k]#
+		print(paste("beta=",beta,"; Df=",Df,sep=""))#
+		for(i in 1:length(i.seq)){#
+			if(i%%floor(length(i.seq)/10)==0){#
+				print(paste(" ",floor(100*i/length(i.seq)),"%",sep=""))#
+			}#
+			for(r in 1:rep){#
+				set.seed(1980734027+3457*r)#
+				p.min.sub <- pmvt(lower=qt(pnorm(rep(thr,i.seq[i])),df=Df),sigma=matrix(cor.mtx[1:i.seq[i],1:i.seq[i]],i.seq[i],i.seq[i]),df=Df)#
+				prob.exc.min.sub[i,j,k,r] <- p.min.sub#
+			}#
+		}#
+		#covar.x <- data.frame(x1=x,x2=x^2,x3=x^3,x4=x^4,x5=x^5)#
+		#covar.x.sub <- data.frame(x1=x[i.seq],x2=x[i.seq]^2,x3=x[i.seq]^3,x4=x[i.seq]^4,x5=x[i.seq]^5)#
+		#p.min <- predict(lm(p.min.sub~.,data=covar.x.sub),newdata=covar.x)#
+		p.min <- predict(smooth.spline(x=x[i.seq],y=apply(prob.exc.min.sub,c(1,2,3),mean)[,j,k],df=3),x=x)$y#
+		#p.min <- predict(loess(p.min.sub~.,data=data.frame(x=x[i.seq])),newdata=data.frame(x=x)) #
+		#p.min <- as.vector(kriging(data=p.min.sub,data.coord=x[i.seq],krig.coord=x,cov.mod="whitmat",sill=1,range=0.2,smooth=0.6)$krig.est)#
+		prob.exc.min[,j,k] <- p.min#
+	}#
+}
+y <- c(4.4,4.2,3.6,3.2,3.5,3.3)
+x <- as.factor(c("A","A","B","B","B","C"))
+fit <- lm(y~x)
+fit
+X <- cbind(1,x)
+X
+X <- cbind(1,c(0,0,1,1,1,0),c(0,0,0,0,0,1))
+X
+t(X)%*%X
+solve(t(X)%*%X)
+6*3-3*3+1*(-3)
+det(t(X)%*%X)
+y <- c(4.4,4.2,3.6,3.4,3.3)
+x <- as.factor(c("A","A","B","B","C"))
+y <- c(4.4,4.2,3.1,3.4,3.3)
+x <- as.factor(c("A","A","B","B","B"))
+y
+x
+X <- cbind(1,c(0,0,1,1,1))
+X
+t(X)%*%X
+solve(t(X)%*%X)
+y <- c(4.4,4.2,4.1,3.4,3.3)
+x <- as.factor(c("A","A","A","B","B"))
+X <- cbind(1,c(0,0,0,1,1))
+t(X)%*%X
+solve(t(X)%*%X)
+y <- c(4.4,4.2,3.1,3.4,3.3)
+x <- as.factor(c("A","A","B","B","B"))
+X <- cbind(1,c(0,0,1,1,1))
+t(X)%*%X
+solve(t(X)%*%X)
+solve(t(X)%*%X)%*%t(X)%*%y
+fit <- lm(y~x)
+fit
+summary(fit)
+y <- c(4.4,4.2,3.0,3.3,3.3)
+fit <- lm(y~x)
+summary(fit)
+sqrt(0.08)
+0.1^2
+0.1^2*4
+0.2^2
+0.08/3
+sqrt(0.08/3)
+0.08/18*3
+sqrt(0.08/18*3)
+sqrt(0.08/18*5)
+qt(0.025,3)
+qt(0.025,3)*sqrt(0.08/3)*sqrt(5/2)
+-1.1+qt(0.025,3)*sqrt(0.08/3)*sqrt(5/2)
+-1.1-qt(0.025,3)*sqrt(0.08/3)*sqrt(5/2)
+0.32/9
+sqrt(0.32/9)
+qt(0.95,3)
+3.2+qt(0.95,3)*0.1885618
+3.2-qt(0.95,3)*0.1885618
+pthresh.vec <- seq(0.9,0.99,by=0.1)
+length(pthresh.vec)
+pthresh.vec <- seq(0.9,0.99,by=0.01)
+length(pthresh.vec)
+pthresh.vec
+0.1/0.4
+0.1/0.5
+0.1/0.3
+pthresh.vec <- seq(0.95,0.99,by=0.005)
+pthresh.vec
+length(pthresh.vec)
+0.05/0.5
+0.002/0.5
+pthresh.vec <- seq(0.95,0.995,by=0.005)
+length(pthresh.vec)
+pthresh.vec
+1-2*(1-pthresh.vec)
+1-(1-pthresh.vec)/0.3
+1-(1-pthresh.vec)/0.45
+load('~/Dropbox/inla_for_exceedances/clusterKAUST/INLA_Competition_Shaheen/Outputs/scores.df_0.998_posquantTRUE.Rdata')#
+load('~/Dropbox/inla_for_exceedances/clusterKAUST/INLA_Competition_Shaheen/Outputs/scores.s.array_0.998_posquantTRUE.Rdata')#
+load('~/Dropbox/inla_for_exceedances/clusterKAUST/INLA_Competition_Shaheen/Outputs/scores.sy.array_0.998_posquantTRUE.Rdata')#
+load('~/Dropbox/inla_for_exceedances/clusterKAUST/INLA_Competition_Shaheen/Outputs/scores.y.array_0.998_posquantTRUE.Rdata')
+ls()
+scores.df.sort.stations.years <- scores.df[order(scores.df$scores.stations.years),]#
+scores.df.sort.stations <- scores.df[order(scores.df$scores.stations),]#
+scores.df.sort.years <- scores.df[order(scores.df$scores.years),]#
+#
+head(scores.df.sort.stations.years)#
+head(scores.df.sort.stations)#
+head(scores.df.sort.years)
+library(fields)
+par(mfrow=c(2,3))#
+for(i in 1:5){#
+	image.plot(seq(0.9,0.99,by=0.01),seq(50,500,by=50),scores.sy.array[i,,],xlab="Threshold probability",ylab="Matern range",zlim=range(scores.sy.array[,,]),main=paste("SD weekly effect:",seq(0.005,0.025,by=0.005)[i]))#
+}
+par(mfrow=c(2,3))#
+for(i in 1:5){#
+	image.plot(seq(0.9,0.98,by=0.01),seq(50,500,by=50),scores.sy.array[i,-10,],xlab="Threshold probability",ylab="Matern range",zlim=range(scores.sy.array[,-10,]),main=paste("SD weekly effect:",seq(0.005,0.025,by=0.005)[i]))#
+}
+scores.df.sort.years
+load('~/Dropbox/inla_for_exceedances/clusterKAUST/INLA_Competition_Shaheen/Outputs/Model122/fit.exc.RW2TRUE.fixsdweekTRUE.posquantTRUE.pthresh0.92.matrange100.sdweek0.01.cv0.Rdata')
+library(INLA)
+names(fit)
+fit$summary.hyperpar
+ifelse(c(1:10)>3,rexp(10),-rexp(10))
+library(mvtnorm)#
+library(methods)#
+library(parallel)#
+library(fields)
+BASE <- "~/Dropbox/maxid-sharedfolder/R_Code_Raphael"
+setwd(BASE)#
+#
+source("R_Code/Tools.R")
+sim <- 1
+Ds <- c(10,15,20,30,50) # dimensions of data (i.e., number of sites)#
+	n <- 50 #
+	alpha <- 1#
+	betas <- c(0,0.5,1) # random factor shape parameters (AD/AI)#
+	range <- 0.5#
+	smooth <- 1#
+	pdf(paste("Figures/Boxplot_sim",sim,"_alpha",alpha,".pdf",sep=""),width=9,height=6)#
+	par(mfrow=c(2,3),mgp=c(2,1,0),mar=c(3.1,3.1,3.1,1))#
+	mle.boxplot <- mle[,,which(ns==n),which(alphas==alpha),,which(ranges==range),which(smooths==smooth),]#
+	for(i in 1:length(betas)){#
+		mle.boxplot.beta <- mle.boxplot[,,i,2]#
+		boxplot(mle.boxplot.beta,col=1+i,ylab=expression("Estimated parameter"~beta),main=bquote(beta~"="~.(betas[i])))#
+		abline(h=betas[i],col="orange",lwd=2)#
+	}#
+	for(i in 1:length(betas)){#
+		mle.boxplot.range <- mle.boxplot[,,i,3]#
+		boxplot(mle.boxplot.range,col=1+i,ylab=expression("Estimated range parameter"~lambda),main=bquote(beta~"="~.(betas[i])))#
+		abline(h=range,col="orange",lwd=2)#
+	}
+sim <- 1 # simulation index#
+#
+if(sim==1){#
+	Ds <- c(10,15,20,30,50) # dimensions of data (i.e., number of sites)#
+	ns <- c(50) # numbers of observations#
+	ranges <- c(0.5) # correlation range parameters#
+	smooths <- c(1) # correlation smoothness parameters#
+	alphas <- c(1) # random factor scale parameters#
+	betas <- c(0,0.5,1) # random factor shape parameters (AD/AI)#
+	fixed <- c(TRUE,FALSE,FALSE,TRUE) # where the parameters (alpha,beta,range,smooth) fixed to their true values?#
+	Rs <- c(1:1024) # replications#
+} else if(sim==2){#
+	Ds <- c(20) # dimensions of data (i.e., number of sites)#
+	ns <- c(50) # numbers of observations#
+	ranges <- c(0.5) # correlation range parameters#
+	smooths <- c(1) # correlation smoothness parameters#
+	alphas <- c(1,2,5) # random factor scale parameters#
+	betas <- c(0,0.5,1) # random factor shape parameters (AD/AI)#
+	fixed <- c(FALSE,FALSE,FALSE,TRUE) # where the parameters (alpha,beta,range,smooth) fixed to their true values?#
+	Rs <- c(1:1024) # replications#
+}
+sim <- 1#
+load(file=paste("Outputs/Sim",sim,"/mle.RData",sep=""))
+sim
+mle
+V
+z <- -1/log(seq(0.01,0.99,by=0.01))
+z
+z <- -1/log(seq(0.001,0.999,by=0.001))
+rho <- 0.5#
+alphas <- c(1,2,5)#
+betas <- c(0,0.5,1,2)#
+#
+z <- -1/log(seq(0.001,0.999,by=0.001))#
+theta.z <- array(dim=c(length(alphas),length(betas),length(z)))
+i <- j <- 1
+alpha <- alphas[i]
+beta <- betas[j]
+parR <- c(alpha,beta)
+z.RW <- qG(exp(-1/z),parR=parR,log=FALSE)
+z.RW
+V(cbind(z.RW,z.RW),rho=rho,parR=parR,log=FALSE)
+k <- 1
+V(c(z.RW[k],z.RW[k]),rho=rho,parR=parR,log=FALSE)
+rho <- 0.5#
+alphas <- c(1,2,5)#
+betas <- c(0,0.5,1,2)#
+#
+z <- -1/log(seq(0.001,0.999,by=0.001))#
+theta.z <- array(dim=c(length(alphas),length(betas),length(z)))#
+for(i in 1:length(alphas)){#
+	alpha <- alphas[i]#
+	for(j in 1:length(betas)){#
+		print(paste("alpha=",alpha,"; beta=",beta,sep=""))#
+		beta <- betas[j]#
+		parR <- c(alpha,beta)#
+		z.RW <- qG(exp(-1/z),parR=parR,log=FALSE)#
+		for(k in 1:length(z.RW)){#
+			theta.z[i,j,k] <- z[k]*V(c(z.RW[k],z.RW[k]),rho=rho,parR=parR,log=FALSE)#
+		}#
+	}#
+}
+rho <- 0.5#
+alphas <- c(1,2,5)#
+betas <- c(0,0.5,1,2)#
+#
+z <- -1/log(seq(0.001,0.999,by=0.001))#
+theta.z <- array(dim=c(length(alphas),length(betas),length(z)))#
+for(i in 1:length(alphas)){#
+	alpha <- alphas[i]#
+	for(j in 1:length(betas)){#
+		print(paste("alpha=",alpha,"; beta=",beta,sep=""))#
+		beta <- betas[j]#
+		parR <- c(alpha,beta)#
+		z.RW <- qG(exp(-1/z),parR=parR,log=FALSE)#
+		for(k in 1:length(z.RW)){#
+			print(k)#
+			theta.z[i,j,k] <- z[k]*V(c(z.RW[k],z.RW[k]),rho=rho,parR=parR,log=FALSE)#
+		}#
+	}#
+}
+warnings()
+z*V(cbind(z.RW,z.RW),rho=rep(rho,length(z)),parR=parR,log=FALSE)
+plot(z,theta.z[1,1,],type="l")
+dev.off()
+dev.off()
+plot(z,theta.z[1,1,],type="l")
+V
+plot(z,theta.z[1,1,],type="l",log="x")
+plot(z,theta.z[1,1,],type="l",log="x",ylim=c(1,2))
+plot(z,theta.z[1,1,],type="l",log="x",ylim=c(1,2),xlab="z",ylab="Level-dependent extremal coefficient zV(z,z)")
+lines(z,theta.z[1,2,],col=2)
+lines(z,theta.z[1,3,],col=3)
+lines(z,theta.z[1,4,],col=4)
+par(mfrow=c(1,length(alphas)))#
+for(i in 1:length(alphas)){#
+	plot(z,theta.z[i,1,],type="l",log="x",ylim=c(1,2),xlab="z",ylab="Level-dependent extremal coefficient zV(z,z)",main=bquote(alpha*"="*.(alpha)))#
+	lines(z,theta.z[i,2,],col=2)#
+	lines(z,theta.z[i,3,],col=3)#
+	lines(z,theta.z[i,4,],col=4)#
+}
+par(mfrow=c(1,length(alphas)))#
+for(i in 1:length(alphas)){#
+	plot(z,theta.z[i,1,],type="l",log="x",ylim=c(1,2),xlab="z",ylab="Level-dependent extremal coefficient zV(z,z)",main=bquote(alpha*"="*.(alphas[i])))#
+	lines(z,theta.z[i,2,],col=2)#
+	lines(z,theta.z[i,3,],col=3)#
+	lines(z,theta.z[i,4,],col=4)#
+}
+par(mfrow=c(1,length(alphas)))#
+for(i in 1:length(alphas)){#
+	plot(z,theta.z[i,1,],type="l",ylim=c(1,2),xlab="Level z",ylab="Level-dependent extremal coefficient zV(z,z)",main=bquote(alpha*"="*.(alphas[i])))#
+	lines(z,theta.z[i,2,],col=2)#
+	lines(z,theta.z[i,3,],col=3)#
+	lines(z,theta.z[i,4,],col=4)#
+}
+par(mfrow=c(1,length(alphas)))#
+for(i in 1:length(alphas)){#
+	plot(z,theta.z[i,1,],type="l",log="x",ylim=c(1,2),xlab="Level z",ylab=expression("Extremal coefficient "*theta*"(z)=zV(z,z)"),main=bquote(alpha*"="*.(alphas[i])))#
+	lines(z,theta.z[i,2,],col=2)#
+	lines(z,theta.z[i,3,],col=3)#
+	lines(z,theta.z[i,4,],col=4)#
+}
+par(mfrow=c(1,length(alphas)))#
+for(i in 1:length(alphas)){#
+	plot(z,theta.z[i,1,],type="l",log="x",ylim=c(1,2),xlab="Level z",ylab=expression("Extremal coefficient "*theta[2]*"(z)=zV(z,z)"),main=bquote(alpha*"="*.(alphas[i])))#
+	lines(z,theta.z[i,2,],col=2)#
+	lines(z,theta.z[i,3,],col=3)#
+	lines(z,theta.z[i,4,],col=4)#
+}
+legend(x="bottomright",legend=c(expression(beta*"=0"),expression(beta*"=0.5"),expression(beta*"=1"),expression(beta*"=2")),lty=1,col=c(1:4))
+par(mfrow=c(1,length(alphas)),mgp=c(2,1,0),mar=c(3.1,3.1,3.1,1))#
+for(i in 1:length(alphas)){#
+	plot(z,theta.z[i,1,],type="l",log="x",ylim=c(1,2),xlab="Level z",ylab=expression("Extremal coefficient "*theta[2]*"(z)=zV(z,z)"),main=bquote(alpha*"="*.(alphas[i])))#
+	lines(z,theta.z[i,2,],col=2)#
+	lines(z,theta.z[i,3,],col=3)#
+	lines(z,theta.z[i,4,],col=4)#
+}#
+legend(x="bottomright",legend=c(expression(beta*"=0"),expression(beta*"=0.5"),expression(beta*"=1"),expression(beta*"=2")),lty=1,col=c(1:4))
+pwd
+pwd()
+wd()
+?setwd
+getwd()
+pdf(paste("Figures/ExtrCoefs.pdf",sep=""),width=7,height=4)#
+par(mfrow=c(1,length(alphas)),mgp=c(2,1,0),mar=c(3.1,3.1,3.1,1))#
+for(i in 1:length(alphas)){#
+	plot(z,theta.z[i,1,],type="l",log="x",ylim=c(1,2),xlab="Level z",ylab=expression("Extremal coefficient "*theta[2]*"(z)=zV(z,z)"),main=bquote(alpha*"="*.(alphas[i])))#
+	lines(z,theta.z[i,2,],col=2)#
+	lines(z,theta.z[i,3,],col=3)#
+	lines(z,theta.z[i,4,],col=4)#
+}#
+legend(x="bottomright",legend=c(expression(beta*"=0"),expression(beta*"=0.5"),expression(beta*"=1"),expression(beta*"=2")),lty=1,col=c(1:4))#
+dev.off()
+pdf(paste("Figures/ExtrCoefs.pdf",sep=""),width=7,height=2.5)#
+par(mfrow=c(1,length(alphas)),mgp=c(2,1,0),mar=c(3.1,3.1,3.1,1))#
+for(i in 1:length(alphas)){#
+	plot(z,theta.z[i,1,],type="l",log="x",ylim=c(1,2),xlab="Level z",ylab=expression("Extremal coefficient "*theta[2]*"(z)=zV(z,z)"),main=bquote(alpha*"="*.(alphas[i])))#
+	lines(z,theta.z[i,2,],col=2)#
+	lines(z,theta.z[i,3,],col=3)#
+	lines(z,theta.z[i,4,],col=4)#
+}#
+legend(x="bottomright",legend=c(expression(beta*"=0"),expression(beta*"=0.5"),expression(beta*"=1"),expression(beta*"=2")),lty=1,col=c(1:4))#
+dev.off()
+pdf(paste("Figures/ExtrCoefs.pdf",sep=""),width=7,height=2.5)#
+par(mfrow=c(1,length(alphas)),mgp=c(2,1,0),mar=c(3.1,3.1,3.1,1))#
+for(i in 1:length(alphas)){#
+	plot(z,theta.z[i,1,],type="l",log="x",ylim=c(1,2),xlab="Level z",ylab=expression("Extremal coefficient "*theta[2]*"(z)=zV(z,z)"),main=bquote(alpha*"="*.(alphas[i])))#
+	lines(z,theta.z[i,2,],col=2)#
+	lines(z,theta.z[i,3,],col=3)#
+	lines(z,theta.z[i,4,],col=4)#
+	abline(h=c(1,2),col="lightgrey")#
+}#
+legend(x="bottomright",legend=c(expression(beta*"=0"),expression(beta*"=0.5"),expression(beta*"=1"),expression(beta*"=2")),lty=1,col=c(1:4))#
+dev.off()
+1-0.99^36
+optim
+?sink
+sink("~/Desktop/sink-examp.txt")#
+i <- 1:10#
+outer(i, i, "*")#
+sink()
+sink("~/Desktop/sink-examp.txt")#
+i <- 1:10#
+outer(i, i, "*")
+un <- function(param){#
+a <- param[1]#
+b <- param[2]#
+r <- sqrt(a^2+b^2)#
+res <- -10 * sin(r)/r#
+#write.table(x=b, file="B.txt", append=TRUE, sep=",",#
+col.names=FALSE,#
+row.names=FALSE)#
+return(res)}
+un <- function(param){#
+a <- param[1]#
+b <- param[2]#
+r <- sqrt(a^2+b^2)#
+res <- -10 * sin(r)/r#
+#write.table(x=b, file="B.txt", append=TRUE, sep=",",#
+#col.names=FALSE,#
+#row.names=FALSE)#
+return(res)}
+un(c(1,3))
+un(c(1,3))
+un <- function(param){#
+a <- param[1];#
+b <- param[2];#
+r <- sqrt(a^2+b^2);#
+res <- -10 * sin(r)/r;#
+#write.table(x=b, file="B.txt", append=TRUE, sep=",",col.names=FALSE,row.names=FALSE);#
+return(res);}
+un(c(1,3))
+fct <- function(param){return((param[1]^2+param[2]^2))}
+fct(c(1,3))
+?sink
+a <- fct(c(1,3))
+sink(NULL)
+a <- fct(c(1,3))
+a
+fct(c(1,3))
+optim(par=c(3,2),fn=fct,method="Nelder-Mead")
+optim(par=c(3,2),fn=fct,method="Nelder-Mead",control=list(trace=6))
+optim(par=c(3,2),fn=fct,method="Nelder-Mead",control=list(trace=1))
+optim(par=c(3,2),fn=fct,method="Nelder-Mead",control=list(trace=2))
+optim(par=c(3,2),fn=fct,method="Nelder-Mead",control=list(trace=3))
+?optim
+optim(par=c(3,2),fn=fct,method="Nelder-Mead",control=list(trace=10))
+optim(par=c(3,2),fn=fct,method="Nelder-Mead",control=list(trace=1))
+sink(file="~/Desktop/test.txt")
+optim(par=c(3,2),fn=fct,method="Nelder-Mead",control=list(trace=1,maxit=1000))
+sink(file=NULL)
+optim(par=c(3,2),fn=fct,method="Nelder-Mead",control=list(trace=1))
+read.table(file="~/Desktop/test.txt")
+?scan
+txt <- scan(file="~/Desktop/test.txt")
+txt <- readLines(file="~/Desktop/test.txt")
+txt <- readLines(con="~/Desktop/test.txt")
+txt
+class(txt)
+substr(txt,start=1,end=2)
+subtxt <- substr(txt,start=1,stop=2)
+subtxt
+whichparam <- which(subtxt=="BU" | subtxt=="EX" | subtxt=="LO" | subtxt=="HI" | subtxt=="RE")
+paramtxt <- txt[whichparam[length(whichparam)]]
+paramtxt
+param <- substr(paramtxt,22,39)
+param
+as.vector(param)
+as.numeric(param)
+splitstr
+?substr
+strsplit(param," ")
+unlist(strsplit(param," "))
+as.vector(unlist(strsplit(param," ")))
+unlist(unlist(strsplit(param," ")))
+unlist(strsplit(param," "))
+as.numeric(unlist(strsplit(param," ")))
+?sink
