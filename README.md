@@ -210,10 +210,11 @@ If you resume a chain (`start_iter != 1`), the sampler may load trace files such
 - Load the cluster’s GSL module (if available), or install GSL via conda-forge.
 - Make sure include/lib paths are correct.
 
----
+
 
 ---
 ## References
+
 [^1]: Huser, R., & Wadsworth, J. L. (2019). Modeling spatial processes with unknown extremal dependence class. Journal of the American statistical association, 114(525), 434-444.
 [^2]: Zhang, L., Shaby, B. A., & Wadsworth, J. L. (2022). Hierarchical transformed scale mixtures for flexible modeling of spatial extremes on datasets with many locations. Journal of the American Statistical Association, 117(539), 1357-1369.
 [^3]: Shi, M., Zhang, L., Shaby, B. A. and Risser, M. D. (2026), ‘Spatial Scale-aware Tail Dependence Modeling for High-dimensional Spatial Extremes’. Journal of the American Statistical Association, doi: 10.1080/01621459.2026.2627493.
