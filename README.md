@@ -1,4 +1,6 @@
-# Handbook of Statistics of Extremes: Subasymptotic models for spatial extremes 
+# Handbook of Statistics of Extremes 
+
+> Subasymptotic models for spatial extremes 
 
 
 This repository mainly contains code to **simulate** and **fit** a HW (Huser-Wadsworth randome scale-mixture [^1]) model for spatio-temporal extremes. This full Bayesian impolementation is based on the works in [^2] and [^3].
@@ -7,7 +9,7 @@ Key design choices:
 - The fitting of the **max-stable model** is done through calling the `fitmaxstab()` function in the R package ` SpatialExtremes`.
 - The fitting of the **max-infinite divisible mdoel** uses the implementation provided by Huser et al. in their paper [^4]. 
 - Python orchestrates simulation and MCMC sampling.
-- To facilitate computation time, we employ a **C++ shared library** (`RW_inte_cpp.so`) to provide fast numerical integration routines, called from Python via `ctypes`. Further, we utilize **MPI parallelism over time replicates** (each MPI rank handles one time index).
+- To facilitate computation time, we employ a **C++ shared library** (`HW_inte_cpp.so`) to provide fast numerical integration routines, called from Python via `ctypes`. Further, we utilize **MPI parallelism over time replicates** (each MPI rank handles one time index).
 
 ---
 
@@ -16,8 +18,8 @@ Key design choices:
 ```
 .
 ├── sampler.py                  # MPI sampler (special-case: constant parameters)
-├── simulate_data.py            # Simulation script for RW mixture data
-├── RW_inte.py                  # Python wrapper for RW CDF/PDF (loads .so via ctypes)
+├── simulate_data.py            # Simulation script for HW mixture data
+├── HW_inte.py                  # Python wrapper for HW CDF/PDF (loads .so via ctypes)
 ├── RW_inte_cpp.cpp             # C++ implementation of numerical integration
 ├── utilities.py                # helper functions (kernels, covariances, transforms, etc.)
 ├── exe.sh                      # example Slurm script (mpirun + sampler.py)
@@ -121,7 +123,7 @@ ls -lh RW_inte_cpp.so
 
 ---
 
-## 4) Simulate data from the RW mixture model
+## 4) Simulate data from the HW mixture model
 
 Run the simulation script to generate:
 - `Y` (typically shape `(Ns, Nt)`)
