@@ -1,6 +1,14 @@
-# Handbook of Statistics of Extremes 
+### Code for Chapter 17
 
-> Subasymptotic models for spatial extremes 
+<p align="left">
+  <img src="https://extremestats.github.io/Handbook/images/cover.jpg"
+       alt="Handbook on Statistics of Extremes cover"
+       width="150">
+</p>
+
+https://extremestats.github.io/Handbook/
+
+> Subasymptotic models for spatial extremes [^5][^6]
 
 
 This repository mainly contains code to **simulate** and **fit** a HW (Huser-Wadsworth randome scale-mixture [^1]) model for spatio-temporal extremes. This full Bayesian impolementation is based on the works in [^2] and [^3].
@@ -216,7 +224,8 @@ If you resume a chain (`start_iter != 1`), the sampler may load trace files such
 
 ---
 ## References
-
+[^5]: de Carvalho, M., Huser, R., Naveau, P., and Reich, B. J. (2026). <em>Handbook on Statistics of Extremes</em>. Chapman &amp; Hall/CRC, Boca Raton, FL.
+[^6]: Zhang, L., Rohrbeck, C., and Opitz, T. (2026). Subasymptotic models for spatial extremes. In <em>Handbook on Statistics of Extremes</em>, Chapter 17, pp. 377–400. Chapman &amp; Hall/CRC, Boca Raton, FL.
 [^1]: Huser, R., & Wadsworth, J. L. (2019). Modeling spatial processes with unknown extremal dependence class. Journal of the American statistical association, 114(525), 434-444.
 [^2]: Zhang, L., Shaby, B. A., & Wadsworth, J. L. (2022). Hierarchical transformed scale mixtures for flexible modeling of spatial extremes on datasets with many locations. Journal of the American Statistical Association, 117(539), 1357-1369.
 [^3]: Shi, M., Zhang, L., Shaby, B. A. and Risser, M. D. (2026), ‘Spatial Scale-aware Tail Dependence Modeling for High-dimensional Spatial Extremes’. Journal of the American Statistical Association, doi: 10.1080/01621459.2026.2627493.
