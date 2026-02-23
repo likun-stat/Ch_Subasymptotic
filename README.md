@@ -32,6 +32,7 @@ Key design choices:
 ├── utilities.py                # helper functions (kernels, covariances, transforms, etc.)
 ├── exe.sh                      # example Slurm script (mpirun + sampler.py)
 ├── data/                       # PNW Temperature data sets
+├── PNW_regions/                # Separate data into separate PNW west, east and south regions
 ├── maxID_Code_Raphael/                    # max-ID model impelemted by Huser et al. (2021)
     ├── C_Code/                       
     ├── Data/
